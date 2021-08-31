@@ -1,0 +1,171 @@
+body {background:#fff;font:normal small "Comic Sans MS",Arial,Helvetica,sans-serif;color:#666}
+
+h1, h2, h3, h4, h5, h6 {margin:0;padding:0}
+h1 {}
+h2 {}
+h3 { font-size:1.25em; padding-bottom:10px}
+h4, h5, h6 {}
+
+hr {border-color:#344E44;border-style:dashed}
+
+p, ul, ol, blockquote {margin-top:0}
+
+a {background:none;text-decoration:none;color:#344E44}
+a:hover {background:url(images/img10.png) repeat-x left bottom}
+.content ul {margin-top:0}
+
+img {border:none}
+
+/* Videos de Youtube */
+
+#video{ width:550px; height:330px }
+
+/* Images */
+#balsamiq{			width:475px; height:305px }
+#codecombat{		width:600px; height:253px }
+#codecombatLogo{	width:464px; height:143px }
+#coolmathgames{		width:580px; height:100px }
+#combiner{			width:373px; height:195px }
+#comic{				width:430px; height:230px }
+#css{				width:552px; height:89px  }
+#educacioilestic{ 	width:482px; height:142px }
+#exit2{				width:409px; height:297px }
+#experiments{		width:326px; height:118px }
+#flappybirds{		width:331px; height:159px }
+#frozen{			width:418px; height:190px }
+#funnylogo{ 		width:467px; height:111px }
+#geogreeting{		width:463px; height:70px  }
+#graffiti{			width:400px; height:89px  }
+#gumball{			width:400px; height:325px }
+#hourOfCode{		width:371px; height:166px }
+#html{				width:552px; height:135px }
+#iceage{			width:500px; height:263px }
+#imgnormas{ 		width:365px; height:253px }
+#infinity{			width:389px; height:264px }
+#internet{			width:369px; height:158px }
+#kahoot{ 			width:363px; height:209px }
+#legocar{			width:470px; height:259px }
+#lightbot{			width:450px; height:300px }
+#loquendo{ 			width:354px; height:77px  }
+#mecanet_uno{		width:462px; height:255px }
+#mecanet_dos{		width:459px; height:181px }
+#mecanet_tres{		width:411px; height:213px }
+#moovly{			width:458px; height:186px }
+#pablo{				width:348px; height:43px  }
+#photovisi{			width:480px; height:98px  }
+#pimptheface{ 		width:389px; height:53px  }
+#puzzle{ 			width:320px; height:60px  }
+#qr{				width:317px; height:98px  }
+#qrTipos{			width:492px; height:328px }
+#redes{ 			width:442px; height:304px }
+#redesSociales{		width:442px; height:131px }
+#runMarco{			width:500px; height:195px }
+#scolartic{ 		width:380px; height:81px  }
+#snailbob{			width:318px; height:150px }
+#socrative{			width:350px; height:129px }
+#starwars{ 			width:500px; height:256px }
+#stripgenerator{ 	width:372px; height:104px }
+#tagul{				width:275px; height:122px }
+#theFoos{			width:400px; height:212px }
+#thekids{ 			width:483px; height:170px }
+#tresdbin{ 			width:353px; height:185px }
+#viaje3eso{			width:382px; height:86px  }
+#videoscribe{		width:450px; height:84px  }
+#vozme{ 			width:389px; height:100px }
+#whatsnew{ 			width:371px; height:75px  }
+#youtubeamp3{		width:321px; height:76px  }
+			  
+/* Header */
+
+#header {width:1050px;height:150px;margin:0 auto 20px auto;background:#344E44 url(images/1img1.png);color:#fff}
+#header h1 {float:left; padding-left:60px; padding-top:20px;font-size:3em}
+#header h2 {float:left;padding:40px 0 0 0}
+#header a {text-decoration:none;color:#fff}
+
+/* Pages */
+
+#pages {float:right;clear:both;width:570px;padding-right:40px}
+#pages h2 {display:none}
+#pages ul {margin:0;padding:0;list-style:none;font-size:2em}
+#pages li {display:inline;padding-right:15px}
+
+#pages a {background:none;text-decoration:none}
+#pages a:hover {background:url(images/img11.png) repeat-x left bottom}
+#pages .active {background:url(images/img11.png) repeat-x left bottom}
+
+/* Content */
+
+#content {width:1000px;margin:0 auto}
+
+/* Column One */
+
+#posts {float:left;width:675px}
+#posts .post {margin-bottom:1em;background:url(images/1img3.gif) repeat-x left bottom}
+#posts .title {font-size:2em}
+#posts .posted {margin-bottom:1em; font-size:1.1em}
+#posts .story {padding:20px}
+#posts .story .contenidoInfo {padding-top:12px; padding-bottom:12px}
+#posts .story a {font-weight:bold;color:#006600}
+#posts .meta {background:url(images/1img3.gif) repeat-x left top; margin-top:1em;margin-bottom:1em;padding-top:1em;padding-bottom:1em;text-align:right;font-style:italic;font-size:1em}
+#posts .meta a {font-weight:bold;color:#006600}
+
+blockquote {
+  font: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+} 
+blockquote cite {
+  display: block;
+  margin-top: 10px;
+}
+
+/*blockquote {
+background:#f9f9f9;
+border-left:6px solid #ccc;
+margin:1.5em 10px;
+padding:.5em 10px;
+quotes:"\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+content:open-quote;
+font-size:4em;
+line-height:.1em;
+margin-right:.25em;
+vertical-align:-.4em;
+}
+blockquote p {
+display:inline;
+}
+blockquote cite {
+font-size: 14px;
+display: block;
+margin-top: 10px;
+}*/
+
+
+/* Column Two */
+
+.colTwo {float:right;width:300px;margin-bottom:10px}
+.colTwo h2 {width:300px;height:30px;margin-bottom:1em;background:#344E44 url(images/1img2.png);text-align:center;font-size:1.4em;color:#fff}
+
+.colTwo ul {margin:0;padding-right:10px;list-style:none}
+.colTwo li {margin-bottom:1em; list-style-image:url(images/bullet.png);font-size:1.2em}
+.colTwo .trimestre {font-size:0.9em; list-style:none}
+/* .colTwo .content ul p {font-size:0.9em} */
+
+.colTwo .heading {height:30px;padding:0px}
+.colTwo .content {padding:0 20px 20px 20px}
+
+/* Pie de página */
+
+#footer {clear:both;text-align:center; width:1050px;height:40px;margin:0 auto;padding-top:10px;background:url(images/1img4.png);color:#fff}
+
+#footer p {margin:0;padding:0;text-align:center;font-weight:bold;color:#fff}
+#footer a {color:#fff}
+
+.fleft {float:left;padding-left:20px;padding-top:7px}
+.fright {float:right;padding-right:15px}
+.fcenter {float:none;text-align:center;padding-top:7px}
