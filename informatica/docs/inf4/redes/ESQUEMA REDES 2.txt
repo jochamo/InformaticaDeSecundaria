@@ -1,0 +1,28 @@
+esquema de red para una casa con dos plantas
+
+componentes de la red:
+
+- 1 modem ADSL (se pueden conectar los 2 routers al modem)
+- 2 routers (para diferenciar las 2 redes)
+- 3 switch de 4 puertos
+- 1 impresora PARA CADA UNA DE LAS REDES
+- 3 pc's PARA LA RED DE PADRES
+- 6 pc's PARA LA RED DE HIJOS
+
+--------------------------------------------------------------
+
+1.- realizar el esquema de la red DIFERENCIADO 2 SUBREDES:
+	UNA RED PARA PADRES
+	UNA RED PARA HIJOS
+
+2.- asignar direciones ip DIFERENCIANDO AMBAS REDES a todos 
+los elementos de la red que lo necesiten
+
+
+se valorará:
+
+- el esquema de la red
+- el direccionamiento ip
+- la creatividad en los dibujos
+
+- GUARDAR ARCHIVO COMO "ESQUEMA REDES 2.jpg"

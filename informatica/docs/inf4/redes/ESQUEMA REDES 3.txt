@@ -1,0 +1,25 @@
+Esquema de la red de un colegio:
+
+especificaciones:
+
+el colegio debe tener 4 redes diferenciadas:
+	- administracion
+	- profesores primaria
+	- profesores secundaria
+	- alumnos
+
+el equipo de administracion esta formado por 5 personas (2 con portatiles)
+hay 10 profesores de primaria (5 de ellos tienen portatiles)
+y 15 de secundaria (8 de ellos tienen portatiles)
+los alumnos disponen de un aula de 25 ordenadores
+
+nota: un router wifi funciona como un switch pero si tiene dirección ip
+      los portatiles se conectan via wifi
+      los demás por cable
+
+todo el mundo puede imprimir
+
+
+con el programa que querais
+
+
