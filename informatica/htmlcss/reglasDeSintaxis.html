@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu">
+    <ul  class="postnav">
+      <li><a href="index.html">Sumario</a></li>
+      <li><a href="estructura.html">Anterior</a></li>
+      <li><a href="formateo.html">siguiente</a></li>
+    </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Reglas de sintaxis </h2>
+    <h3>Anidamiento</h3>
+    
+    <p>Debemos anidar los elementos correctamente:</p>
+    <p><em><strong>Ejemplo incorrecto (solapamiento):</strong></em></p>
+    <pre><code class="html">&lt;p&gt;Este lenguaje es &lt;strong&gt;m&aacute;s estricto que el anterior. &lt;/p&gt;&lt;/strong&gt;</code></pre>
+    <p><em><strong>Ejemplo correcto (anidamiento):</strong></em></p>
+    <pre><code class="html">&lt;p&gt;Este lenguaje es &lt;strong&gt;m&aacute;s estricto que el anterior. &lt;/strong&gt;&lt;/p&gt;</code></pre>
+    <h3>Caja</h3>
+    <p>Los nombres de las etiquetas y de los atributos tienen que estar en <strong>min&uacute;sculas</strong>. </p>
+    <h3>Valores de atributos</h3>
+    <p> Los valores de los atributos tienen que estar <strong>entre comillas</strong> dobles (&quot;) o simples (').</p>
+    <h3>Simplificaci&oacute;n de atributos</h3>
+    <p>Los valores de atributos  no se pueden simplificar.</p>
+    <p><em><strong>Ejemplo incorrecto</strong></em>:</p>
+    <pre><code class="html">&lt;option selected&gt;una opci&oacute;n&lt;/option&gt;</code></pre>
+    <p><em><strong>Ejemplo correcto:</strong></em></p>
+    <pre><code class="html">&lt;option selected=&quot;selected&quot;&gt;una opci&oacute;n&lt;/option&gt;</code></pre>
+    <h3>Elementos cerrados </h3>
+    <p>Todos los elementos tienen que estar cerrados, tengan o no contenido.</p>
+    <p><em><strong>Ejemplo incorrecto</strong></em>:</p>
+    <pre><code class="html">&lt;p&gt;un p&aacute;rrafo
+&lt;p&gt;otro<br />&lt;img src=&quot;unaimagen.jpg&quot;&gt;</code></pre>
+    <p><em><strong>Ejemplo correcto:</strong></em></p>
+    <pre><code class="html">&lt;p&gt;un p&aacute;rrafo&lt;/p&gt;
+&lt;p&gt;otro&lt;/p&gt;<br />&lt;img src=&quot;unaimagen.jpg&quot; /&gt;</code></pre>
+    <h3>Elementos obligatorios</h3>
+    <p>Algunos elemento son obligatorios (html, body, head, title).</p>
+    
+      <h3>El elemento HTML </h3>
+      <p>El elemento raiz del documento debe contener una declaraci&oacute;n xmlns para  el espacio de nombres de XHTML. </p>
+      <pre><code class="html">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</code></pre>
+      <h3>        &lt;script&gt; y &lt;style&gt;</h3>
+      <p>El contenido de los elementos &lt;script&gt; y &lt;style&gt; es una secci&oacute;n CDATA.</p>
+      <p><em><strong>Ejemplo incorrecto</strong></em>:</p>
+      <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!-- 
+Un script
+--&gt;
+&lt;/script&gt;</code></pre>
+      <p><em><strong>Ejemplo correcto:</strong></em></p>
+      <pre><code class="html">&lt;script type=&quot;text/javascript&quot;&gt;
+Un script
+&lt;/script&gt;</code></pre>
+      <h3>Incompatibilidades entre elementos</h3>
+      <p> A continuaci&oacute;n se detallan las  incompatibilidades en el anidamiento de elementos:</p>
+      <ul>
+        <li>a  no puede contener otros elementos a.</li>
+        <li> pre  no puede contener los elementos img, object,  big, small, sub  &oacute; sup.</li>
+        <li> button no puede contener los elementos input, select, textarea, label, button, form, fieldset, iframe o isindex. </li>
+        <li> label no puede contener otros elementos label. </li>
+        <li> form no puede contener otros elementos form. </li>
+      </ul>
+      <h3>Ejercicios</h3>
+      <h4>Ejercicio 1 </h4>
+      <p>Corrige el siguiente c&oacute;digo:</p>
+      <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Suspendisse  potenti.&lt;/h1&gt;
+&lt;p&gt; Nullam nonummy. Suspendisse fermentum hendrerit nisi. Suspendisse  potenti. &lt;/p&gt;
+&lt;p&gt;Praesent turpis metus, condimentum in, ullamcorper &lt;/p&gt;
+&lt;h1&gt; pellentesque lorem a turpis&lt;/h1&gt;
+&lt;p&gt;Integer condimentum nulla eget neque&lt;/p&gt;
+&lt;p&gt;augue enim vitae  mauri&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <h4>Ejercicio 2 </h4>
+      <p>Corrige el siguiente c&oacute;digo:</p>
+      <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;HTML xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=Content-Type content=&quot;text/html; charset=iso-8859-1&quot;&gt;
+&lt;title&gt;Documento sin t&amp;iacute;tulo&lt;/title&gt;
+&lt;/head&gt;
+&lt;h1&gt;Suspendisse  potenti.&lt;/h1&gt;
+&lt;p&gt; Nullam nonummy. Suspendisse fermentum hendrerit nisi. Suspendisse  potenti. &lt;/p&gt;
+&lt;p&gt;Praesent &lt;a href='http://www.gag.com'&gt;turpis metus&lt;/a&gt;, condimentum in&lt;/p&gt;
+&lt;p&gt;&lt;img SRC=&quot;BR.GIF&quot; width=&quot;8&quot; height=&quot;8&quot; alt=&quot;una imagen muy grande&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;celda 1&lt;/td&gt;
+&lt;td&gt;celda 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;celda 1&lt;/tr&gt;
+&lt;td&gt;celda 2&lt;/td&gt;
+&lt;/td&gt;
+&lt;/table&gt;
+&lt;/html&gt;</code></pre>
+      <h4>Ejercicio 3 </h4>
+      <p>Crea un documento XHTML con 5 errores de sintaxis e interc&aacute;mbialo con un compa&ntilde;ero para hacer las correcciones necesarias. </p>
+  </div>
+</div>
+</body>
+</html>

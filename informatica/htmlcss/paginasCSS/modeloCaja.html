@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="trasteando.html">Anterior</a></li>
+  <li><a href="truquitos.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>El modelo de caja</h2>
+    <p>Es hora de conocer uno de los fundamentos m&aacute;s importantes del CSS: el modelo de caja (box model). Es muy f&aacute;cil, pero entenderlo bien es vital para poder realizar una buena maquetaci&oacute;n de la web.</p>
+    
+      <h3>&iquest;C&oacute;mo es el modelo de caja?</h3>
+      
+      <p>En realidad, todos los elementos de una web (p&aacute;rrafos, enlaces, im&aacute;genes, tablas, etc.) son cajas rectangulares. Los navegadores sit&uacute;an estas cajas de la forma que nosotros les hayamos indicado<br />
+      para maquetar la p&aacute;gina.<br />
+      Hay dos tipos de cajas: block e inline. Los elementos block rompen el flujo de maquetaci&oacute;n. Esto es, aparecen solos, insertando &ldquo;saltos de l&iacute;nea&rdquo;. Los elementos inline siguen el flujo, y est&aacute;n contenidos dentro de elementos de bloque.<br />
+      Por ejemplo, un p&aacute;rrafo ser&iacute;a un elemento block (no podemos tener un p&aacute;rrafo al lado del otro, sino que dos p&aacute;rrafos seguidos aparecer&aacute;n uno abajo del otro. En cambio, un enlace es un elemento inline, ya que no &ldquo;corta&rdquo; el texto donde est&aacute; metido.<br />
+      Estas dos diferencias son importantes, pero hay que tener en mente que ambos tipos comparten el modelo de caja, que es el que aparece en la figura</p>
+    <p><img src="modeloCaja.jpg" alt="Modelo caja" width="182" height="205" /></p>
+    <p>&nbsp;</p>
+    <p>Las propiedades m&aacute;s importantes de una caja son: width (ancho), height (alto), padding (relleno), border (borde) y margin (margen).</p>
+      <h3>Ancho y alto</h3>
+      
+      <p>La propiedad width es un poco confusa, y durante mucho tiempo era horroroso trabajar con ella debido a que Ya-Sabes-Qui&eacute;n no la implementaba correctamente1. Afortunadamente, desde la versi&oacute;n 6 del IE, width funciona como deber&iacute;a, as&iacute; que es un quebradero de cabeza menos.<br />
+      A lo que &iacute;bamos, width representa el ancho de la caja. Pero es el ancho interior, es decir, si bordes, m&aacute;rgenes, ni padding.<br />
+      Podemos indicar este ancho en medidas absolutas (normalmente p&iacute;xeles) o relativas (normalmente %).<br />
+      Aunque los elementos inline tienen width, si la modificamos con CSS no veremos ning&uacute;n resultado visual. Esto es porque el ancho de estos elementos se establece autom&aacute;ticamente para que<br />
+      se ajuste a las dimensiones del elemento inline. Por ejemplo, si tenemos un enlace que consiste en un texto de cinco caracteres, el ancho (width) de este elemento ser&aacute; lo que ocupen esos cinco<br />
+    caracteres.</p>
+    <p>Sobre el alto de la caja, se controla con la propiedad height, y todo lo que hemos dicho antes sobre el ancho, tambi&eacute;n se aplica aqu&iacute;.</p>
+      <h3>Padding</h3>
+      
+      <p>Con padding establecemos la distancia de &ldquo;relleno&rdquo; entre el l&iacute;mite interior de la caja y el exterior (borde). Es una definici&oacute;n muy mala, pero se entiende a la perfecci&oacute;n en el dibujito.<br />
+      Si queremos poner un padding de 20 p&iacute;xeles para toda la caja, lo har&iacute;amos as&iacute;:</p>
+      
+      <pre><code class="css">padding: 20px;</code></pre>
+      
+      <p>Podemos establecer un padding distinto para cada lado, usando los sufijos -top (superior), -bottom (inferior), left (izquierda) y right (derecha):</p>
+<pre><code class="css">padding-top: 10px;
+padding-bottom: 5px;
+padding-left: 30px;
+padding-right: 20px;</code></pre>
+      <p>Podemos abreviar lo anterior en una sola l&iacute;nea, indicando primero el padding superior y luego siguiendo el orden de las agujas del reloj. Es decir, nos quedar&iacute;a: arriba, derecha, abajo, izquierda.<br />
+        El ejemplo anterior se acortar&iacute;a as&iacute;:</p>
+        <pre><code class="css">padding: 10px 20px 5px 30px;</code></pre>
+        <p>Otro atajo &uacute;til es especificar s&oacute;lo dos medidas: una corresponder&iacute;an al padding superior e inferior, y la otra al lateral. Si queremos que los paddings superior e inferior sean de 10 p&iacute;xeles, y los laterales (izquierdo y derecho) de 20 p&iacute;xeles, escribimos:</p>
+        <pre><code class="css">padding: 10px 20px;</code></pre>
+    <h3>Bordes</h3>
+      
+      <p>Si queremos que nuestra caja tenga bordes, lo conseguimos con la propiedad border. Tiene la siguiente sintaxis:<br />
+    border : width | style | color</p>
+    <p>Como habr&aacute;s supuesto, width especifica el grosor del borde. Normalmente es una medida en p&iacute;xeles, pero tambi&eacute;n podemos utilizar las palabras thin (fino), medium (normal) y thick (grueso).<br />
+      Por supuesto, c&oacute;mo de gordo es thick queda a interpretaci&oacute;n del navegador.<br />
+      En cuanto a style, es el tipo de borde. Hay bastantes, pero los m&aacute;s comunes son: solid (l&iacute;nea continua), dashed (l&iacute;nea discontinua), dotted (l&iacute;nea de puntos) y double (l&iacute;nea continua doble). Por &uacute;ltimo, color indica el color del borde.<br />
+      Podemos escoger un tipo de borde diferente para cada lado con los sufijos -top, -bottom, -left y -right. Por ejemplo, para poner que algo tenga el borde inferior de 1 p&iacute;xel a puntitos rojos:</p>
+      
+      <pre><code class="css">border-bottom: 1px dotted #f00;</code></pre>
+      
+      <p>Para eliminar el borde, simplemente ponemos que tiene de grosor 0 p&iacute;xeles o que el estilo del borde es none. Esto es muy importante con las im&aacute;genes, ya que si tenemos una imagen enlazando a algo, los navegadores la ponen con un reborde muy feo. As&iacute; que esto se ha convertido ya en un fijo de las hojas de estilos:<br />
+      img { border : none ; }</p>
+    <h3>M&aacute;rgenes</h3>
+      
+      <p>Los m&aacute;rgenes se controlan con la propiedad margin, y es la distancia entre el borde de la caja y los elementos que la rodean. En cuanto a la forma de usarla, es igual que con la propiedad padding, as&iacute; que la forma de escribir y los atajos es exactamente la misma. Por ejemplo, si queremos m&aacute;rgenes superior e inferior de 20 p&iacute;xeles, y laterales de 5 p&iacute;xeles:</p>
+      
+      <pre><code class="css">margin: 20px 5px;</code></pre>
+      
+      <p>&iexcl;Truco del almendruco! Para centrar un elemento de bloque, podemos hacer uso de auto:</p>
+      
+      <pre><code class="css">margin: 0px auto;</code></pre>
+    
+    <h3>Capas</h3>
+      <p>Vamos a hablar de una etiqueta XHTML que nos qued&oacute; por ver y est&aacute; estrechamente ligada con CSS: &lt;div&gt;. Esta etiqueta se encarga de crear una capa, que es un elemento de bloque que sirve de contenedor a otros elementos de bloque e inline. &iquest;Para qu&eacute; nos sirven? Primero, para organizar sem&aacute;nticamente nuestra p&aacute;gina. El atributo id tiene carga sem&aacute;ntica, as&iacute; que si queremos poner en la cabecera3 de nuestra web el t&iacute;tulo y el men&uacute;, har&iacute;amos esto:</p>
+      
+<pre><code class="html">&lt;div id=&quot;header&quot;&gt;
+  &lt;h1&gt;Mi blog&lt;/h1&gt;
+  &lt;ul id=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;...&quot; title =&quot;...&quot;&gt;Principal &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;...&quot; title =&quot;...&quot;&gt;Acerca de &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;...&quot; title =&quot;...&quot;&gt;Enlaces &lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt; </code></pre>
+      
+    <p>El otro uso de las capas es el de maquetar. Por ejemplo, el layout t&iacute;pico de un blog tiene cuatro capas: la cabecera, la del contenido principal, la de la barra lateral4 y la del pie de p&aacute;gina.<br />
+      Mediante CSS, podemos controlar la disposici&oacute;n de estas capas, y as&iacute; conseguir el dise&ntilde;o que queramos.</p>
+      <h3>Floats</h3>
+      
+      <p>Los floats son probablemente una de las cosas que m&aacute;s cuesta dominar. En ingl&eacute;s los califican como &ldquo;tricky&rdquo;. Yo los califico como &ldquo;peque&ntilde;os cabroncetes&rdquo;.<br />
+      Lo que hacen los floats es alterar el flujo de la p&aacute;gina, &ldquo;incrustando&rdquo; en &eacute;l un elemento de bloque. El ejemplo m&aacute;s t&iacute;pico es el de si queremos poner una imagen acompa&ntilde;ando a un texto, y que el texto &ldquo;envuelva&rdquo; a la imagen. Esto lo conseguimos creando una clase como la siguiente:</p>
+      
+<pre><code class="css">.izquierda {
+  float: left;
+}</code></pre>
+           
+      
+      <p>Podemos indicar tanto left (izquierda) como right (derecha). &iquest;F&aacute;cil, r&aacute;pido y para toda la familia? No. Despu&eacute;s de un float, suelen ocurrir sucesos paranormales5. La mayor&iacute;a de ellos suelen desaparecer mediante la propiedad clear, que se encarga de &ldquo;anular&rdquo; los floats. Los valores que admiten son left, right y both<br />
+      (que significa &ldquo;ambos&rdquo;).<br />
+      Volviendo al ejemplo de layouts de blogs, lo normal es poner el contenido y la barra lateral mediante floats. Lo que suele pasar es que una de estas dos columnas pasa por encima del pie de p&aacute;gina, en lugar de quedar el pie al final de todo. Esto se suele arreglar as&iacute;:</p>
+      
+<pre><code class="css">#footer {
+  clear: both;
+}</code></pre>
+           
+  </div>
+</div>
+
+</body>
+
+</html>

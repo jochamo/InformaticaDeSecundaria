@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script></head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="dosColumnas.html">Anterior</a></li>
+  <li><a href="listasPersonalizadas.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Cabeceras</h2>
+    <p>Una de las cosas muy &uacute;tiles que se han puesto de moda, es hacer que la cabecera de una web sea a su vez un enlace hacia la secci&oacute;n principal de una web. El hecho de que si nos perdemos tengamos un enlace bien gordo arriba del todo, es un salvavidas.</p>
+    <h3>C&oacute;digo XHTML</h3>
+    <p>Los est&aacute;ndares nos dicen que el t&iacute;tulo principal de la p&aacute;gina se pone con la etiqueta &lt;h1&gt;. No obstante, el texto de esta etiqueta lo cambiaremos por una imagen. Como queremos adem&aacute;s meterle un link, tambi&eacute;n usaremos la etiqueta &lt;a&gt;. Dentro del link, metemos una etiqueta &lt;span&gt; para poder ocultar con CSS el texto y que s&oacute;lo se vea la imagen que har&aacute; de cabecera. . . pero nos estamos adelantando. El c&oacute;digo XHTML ser&iacute;a este:</p>
+    
+<pre><code class="html">&lt;div id=&quot;header&quot;&gt;
+  &lt;h1&gt;&lt;a href =&quot;...&quot; title =&quot;...&quot;&gt;&lt;span&gt;T&iacute;tulo&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+   
+   
+    <h3>#header</h3>
+    <p>Primero tocaremos el CSS de la capa #header. Establecemos el ancho y el alto de la capa con las medidas que tenga la imagen (400x100 en este caso). Adem&aacute;s, ponemos la imagen de fondo y quitamos el margin y el padding:</p>
+    
+<pre><code class="css">#header {
+  background: url(bg.png) top left no-repeat;
+  width: 400px;
+  height: 100px;
+  margin: 0px;
+  padding: 0px;
+}</code></pre>      
+      
+    <h3>El heading</h3>
+    <p>Tambi&eacute;n quitamos los m&aacute;rgenes a la etiqueta &lt;h1&gt; (para que la capa mida exactamente lo que la imagen) y hacemos invisible el contenido de la etiqueta &lt;span&gt;, para que el texto de la cabecera s&oacute;lo se muestre en navegadores de texto o aurales:</p>
+    
+<pre><code class="css">#header h1 {
+  margin: 0px;
+}
+#header a span {
+  visibility: hidden;
+}</code></pre>      
+     
+    <h3>El enlace</h3>
+    <p>Ahora s&oacute;lo nos falta la etiqueta &lt;a&gt;. Lo que queremos conseguir es que se pueda hacer clic en todo el &aacute;rea de la cabecera, no s&oacute;lo en lo que ser&iacute;a el texto (invisible) del enlace. Para eso, tenemos que transformar el enlace en un elemento de bloque, y darle las medidas de la imagen.<br />
+      Adem&aacute;s, hemos de quitar los m&aacute;rgenes y el padding, as&iacute; como la decoraci&oacute;n del texto, para que no salga una l&iacute;nea de subrayado:</p>
+    
+<pre><code class="css">#header a {
+  width: 400px;
+  height: 100px;
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none ;
+}</code></pre>
+    
+    <p>Et voil&agrave;! Ya tenemos nuestra cabecera cuca con enlace incorporado.</p>
+    
+  </div>
+</div>
+</body>
+</html>

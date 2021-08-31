@@ -1,0 +1,212 @@
+/*
+-----------------------------------------------
+Quince/Nueve/Siete {Plantilla XHTML/CSS}
+© 2007 | www.caribdis.com.ar
+----------------------------------------------- */
+
+/* BASE
+----------------------------------------------- */
+
+body {
+	margin-top: 30px;
+	font: 80% Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+	text-align: center;
+	background: #FFFFFF;
+}
+
+a {
+	color: #B82024;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #FFFFFF;
+	background: #B82024;
+}
+
+acronym {
+	border: 0;
+	cursor: help;
+}
+
+blockquote {
+	background: #FFFEF4;
+	width: 59%;
+	padding: 5px;
+	text-align: right;
+	border-right: 1px solid #CCCCCC;
+	color: #B82024;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 100%;
+	margin: 0; 
+}
+
+img {
+	border: 0;
+}
+
+/* ELEMENTOS
+----------------------------------------------- */
+
+#container {
+	margin: 0 auto;
+	padding: 10px;
+	text-align: justify;
+	width: 80%;
+	background: #FFFFFF;
+	letter-spacing: 1px;
+}
+
+#container h1 {
+	color: #B82024;
+	font-size: 160%;
+	font-style: italic;
+	margin-top: 25px;
+}
+
+#container h2 {
+	color: #B82024;
+	font-size: 130%;
+}
+
+#container ul {
+	list-style-image: url(images/bullet.gif);
+}
+
+#head {
+	margin: auto;
+	margin-bottom: 10px;
+	text-align: left;
+	border-top: 4px solid #B82024;
+	width: 80%;
+	color: #999999;
+	background: #FFFFFF;
+	padding: 10px;
+}
+
+#head h1 {
+	font-size: 200%;
+	margin: 0;
+}
+
+#menu {
+	background: #FFFFFF;
+	text-align: right;
+	padding: 0;
+	letter-spacing: 4px;
+	font-size: 90%;
+	margin-left: 10px;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+}
+
+#menu ul {
+	margin: 10px 0;
+	padding: 0;
+}
+
+#menu li {
+	list-style-type: square;
+	padding-bottom: 4px;
+	margin: 0 0 0 6px;
+	display: inline;
+}
+
+#menu li a, li a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	width: 100%;
+}
+
+#menu li a {
+	color: #666666;
+}
+
+#menu li a:hover {
+	color: #B82024;
+	background: transparent;
+}
+
+#sidebar {
+	float: right;
+	border-top: 1px solid #B82024;
+	border-bottom: 1px solid #CCCCCC;
+	padding: 10px;
+	width: 27%;
+	margin: 20px 0 10px 10px;
+	font-size: 85%;
+	text-align: center;
+	background: #FFFEF4;
+}
+
+#sidebar h3 {
+	text-align: left;
+	font-size: 100%;
+}
+
+#sidebar img {
+	border: 1px solid #CCCCCC;
+	padding: 3px;
+	background: #FFFFFF;
+}
+
+#sidebar p {
+	text-align: left;
+}
+
+#foot {
+	font-size: 85%;
+	letter-spacing: .1em;
+	margin: 10px auto;
+	padding: 5px 10px;
+	background: #FFFFFF;
+	text-align: left;
+	width: 80%;
+	border-top: 4px solid #B82024;
+	clear: right;
+}
+
+#foot a {
+	color: #000000;
+	text-decoration: none;
+}
+
+#foot a:hover {
+	color: #B82024;
+	background: none;
+}
+
+#foot a:visited {
+	color: #999999;
+	text-decoration: none;
+}
+
+#foot p {
+	margin: 0
+}
+
+/* CLASES
+----------------------------------------------- */
+
+.left {
+	float: left;
+}
+
+.pright {
+	text-align: right;
+	margin-top: 5px;
+}
+
+.right {
+	float: right;
+}
+
+.sign {
+	color: #B82024;
+}

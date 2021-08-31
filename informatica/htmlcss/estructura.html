@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu">
+    <ul  class="postnav">
+      <li><a href="index.html">Sumario</a></li>
+      <li><a href="comoFunciona.html">Anterior</a></li>
+      <li><a href="reglasDeSintaxis.html">siguiente</a></li>
+    </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Estructura de un documento XHTML </h2>
+    <h3>El DOCTYPE </h3>
+    <p>El <strong>DOCTYPE</strong> sirve para indicar al navegador el tipo de documento del que se trata. Por ejemplo:</p>
+    
+    <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</code></pre>
+    <p>Por motivos de espacio, la l&iacute;nea del DOCTYPE
+      aparece cortada. No importa, porque el navegador interpreta los saltos de l&iacute;nea
+    en el codigo como espacios en blanco.</p>
+    <p>Siempre se debe incluir una declaraci&oacute;n de tipo de documento. Para XHTML 1.0, la declaraci&oacute;n tiene que ser una de las tres siguientes:</p>
+
+        <p><strong><em>Strict:</em></strong> Se utiliza cuando se da formato a los textos a   trav&eacute;s de CSS (Cascading Style Sheets), o sea, cuando no se recurre a las   etiquetas &lt;font&gt; etc, para controlar la forma en la que los navegadores   muestran el contenido del documento. La declaraci&oacute;n del tipo de documento debe   ser de la siguiente manera:</p>
+
+    <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</code></pre>
+
+    <p><strong>Transitional: </strong>Se utiliza cuando no se describe la   presentaci&oacute;n de los documentos por medio de hojas de estilo en cascada,   prefiriendo realizarlo a base de etiquetas. Es el sistema adecuado para cuando   se desea facilitar el acceso a usuarios con navegadores sin posibilidades de   tratamiento de CSS. La declaraci&oacute;n del tipo de documento debe ser de la   siguiente manera:</p>
+
+    <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</code></pre>
+
+    <p><strong><em>Frameset:</em></strong> Se utiliza cuando los documentos incorporan   cuadros. La declaraci&oacute;n del tipo de documento debe ser de la siguiente   manera</p>
+
+<pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</code></pre>
+
+
+    <h3>El elemento ra&iacute;z (HTML)</h3>
+    <p>El resto de nuestro documento tiene que ir encerrado por la etiqueta <strong>&lt;html&gt;</strong>. E n esa etiqueta tenemos que indicar que se trata de un documento XTHML y en qu&eacute; idioma est&aacute; redactado. </p>
+    <pre><code class="html">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;es&quot; lang=&quot;es&quot;&gt;</code></pre>
+    <h3>La cabecera (HEAD)</h3>
+    <p>      La cabecera contiene informaci&oacute;n que no forma parte del contenido de la
+      p&aacute;gina, como el t&iacute;tulo, v&iacute;nculos a hojas de estilo CSS, informaci&oacute;n para robots
+      de b&uacute;squeda, scripts, etc. Por ahora, nos quedaremos s&oacute;lo con el t&iacute;tulo de la 
+      p&aacute;gina. La cabecera va encerrada entre <strong>&lt;head&gt;</strong> y<strong> &lt;/head&gt;</strong> y el t&iacute;tulo entre<strong>&lt;title&gt;</strong> y <strong>&lt;/title&gt;</strong>
+    </p>
+    <pre><code class="html">&lt;head&gt;
+  &lt;title&gt;T&iacute;tulo del documento&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+    <h3>El cuerpo (BODY)</h3>
+    <p>Por &uacute;ltimo, nos encontramos con la etiqueta  <strong>&lt;body&gt;</strong> que contiene el cuerpo del documento
+    </p>
+    <pre><code class="html">&lt;body&gt;
+  el Cuerpo del documento
+&lt;/body&gt;</code></pre>
+    <h3>Nuestra plantilla</h3>
+    <p>En resumen: </p>
+    <pre><code class="html">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;es&quot; lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;T&iacute;tulo del documento&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    el Cuerpo del documento
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <h3>Ejercicios</h3>
+    <h4>ejercicio 1 </h4>
+    <p>Crea una p&aacute;gina web sencilla a partir de la plantilla. </p>
+    <ol>
+      <li>&iquest;D&oacute;nde aparece el contenido de la etiqueta &lt;title&gt;?. </li>
+      <li>Utiliza la <a href="http://validator.w3.org/">herramienta de validaci&oacute;n de documentos</a> XHTML del W3C para validar t&uacute; p&aacute;gina. &iquest;Qu&eacute; sucede cuando lo hacemos? </li>
+      <li>En XHTML 1.0 estricto, el elemento body no puede contener directamente  texto. Utiliza la etiqueta &lt;p&gt; (p&aacute;rrafo) para corregir el problema y vuelve a validar tu p&aacute;gina. </li>
+    </ol>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu">
+    <ul  class="postnav">
+      <li><a href="index.html">Sumario</a></li>
+      <li><a href="enlaces.html">Anterior</a></li>
+      <li><a href="imagenes.html">siguiente</a></li>
+    </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Listas</h2>
+    <p>Existen 3 tipos de listas: ordenadas, sin ordenar y de definici&oacute;n.</p>
+    <h3>Listas ordenadas</h3>
+    <p>Las listas ordenadas muestran sus elementos con un n &uacute;mero delante y se crean mediante la etiqueta <strong>&lt;ol&gt;</strong>. Para insertar un elemento en una lista se utiliza la etiqueta <strong>&lt;li&gt;</strong>.</p>
+    <pre><code class="html">&lt;p&gt;Mis escritores favoritos (en orden de preferencia):&lt;/p&gt;<br />&lt;ol&gt;<br />  &lt;li&gt;R.A.Salvatore&lt;/li&gt;<br />  &lt;li&gt;J.K.Rowling&lt;/li&gt;<br />  &lt;li&gt;Isabel Allende&lt;/li&gt;<br />&lt;/ol&gt;</code></pre>
+    <p>Hay que tener en cuenta que con CSS podremos cambiar el n&uacute;mero por el que
+      queremos empezar a contar, as&iacute; como el tipo de numeraci&oacute;n (n&uacute;meros ar&aacute;bigos, 
+      romanos, letras del abecedario, may&uacute;sculas...).</p>
+    <h3>Listas sin ordenar</h3>
+    <p>Las listas sin ordenar muestran los elementos con una vi&ntilde;eta y se crean mediante la etiqueta<strong> &lt;ul&gt; </strong></p>
+    <pre><code class="html">&lt;p&gt;El helado perfecto (&iexcl;&ntilde;am!):&lt;/p&gt;<br />&lt;ul&gt;<br />  &lt;li&gt;1 bola de helado de chocolate&lt;/li&gt;<br />  &lt;li&gt;1 bola de helado de lim&oacute;n&lt;/li&gt;<br />  &lt;li&gt;Trocitos de pi&ntilde;a y melocot&oacute;n en alm&iacute;bar&lt;/li&gt;<br />  &lt;li&gt;Sirope de chocolate&lt;/li&gt;<br />&lt;/ul&gt;</code></pre>
+    <h3>Listas de definici&oacute;n </h3>
+    <p>Las listas de definici&oacute;n se diferencian de las anteriores en que cada &quot;item&quot;
+      est&aacute; compuesto por un par de elementos: un t&eacute;rmino y su definici&oacute;n. Para crear una lista de definci&oacute;n se utilizan 3 etiquetas:</p>
+    <dl>
+      <dt>&lt;dl&gt;</dt>
+      <dd>para marcar la lista</dd>
+      <dt>&lt;dt&gt;</dt>
+      <dd> para un t&eacute;rmino</dd>
+      <dt>&lt;dd&gt;
+      <dt />
+      <dd>para su definición</dd>
+    </dl>
+    <pre><code class="html">&lt;p&gt;Significado de algunos smileys:&lt;/p&gt;<br />&lt;dl&gt;<br />  &lt;dt&gt;:)&lt;/dt&gt;<br />  &lt;dd&gt;Sonrisa&lt;/dd&gt;<br />  &lt;dt&gt;xD&lt;/dt&gt;<br />  &lt;dd&gt;Carcajada&lt;/dd&gt;<br />  &lt;dt&gt;:P&lt;/dt&gt;<br />  &lt;dd&gt;Sacar la lengua&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+    <h3>Listas anidadas</h3>
+    <p> Las listas anidadas no son un nuevo tipo de listas. Es una combinaci&oacute;n de las anteriores. Anidar sign&iacute;fica colocar una lista dentro de otra. Por ejemplo:</p>
+    <pre><code class="html">&lt;ul&gt;<br />  &lt;li&gt;I Trilog&iacute;a del Elfo Oscuro&lt;/li&gt;<br />  &lt;li&gt;
+    &lt;ol&gt;<br />      &lt;li&gt;La Morada&lt;/li&gt;<br />      &lt;li&gt;El Exilio&lt;/li&gt;<br />      &lt;li&gt;El Refugio&lt;/li&gt;<br />    &lt;/ol&gt;
+  &lt;/li&gt;<br />  &lt;li&gt;Trilog&iacute;a del Valle del Viento Helado&lt;/li&gt;<br />&lt;/ul&gt;</code></pre>
+    <h3>Ejercicios</h3>
+    <h4>Ejercicio 1 </h4>
+    <p>Crea un lista ordenada con las canciones de &quot;Diario de un peat&oacute;n&quot; de Joaqu&iacute;n Sabina.</p>
+    <h4>Ejercicio 2</h4>
+    <p>Crea listas anidadas  con tus enlaces favoritos clasificados por categor&iacute;as.</p>
+    <h4>Ejercicio 3 </h4>
+    <p>Crea un documento XHTML con un mismo men&uacute; creado con una lista no ordenada. </p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

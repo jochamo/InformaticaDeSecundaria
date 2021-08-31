@@ -1,0 +1,233 @@
+body {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align:justify;
+}
+h1 {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-size: 32px;
+	font-weight:normal;
+	color: #4D6FC0;
+	margin-top:20px;
+	margin-left:25px;
+	margin-bottom:0px;
+}
+h2 {
+	font-family: "Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-size: 22px;
+	line-height: 20px;
+	font-weight:normal;
+	color: #4D6FC0;
+	margin-top: 18px;
+	margin-bottom: 12px;
+	padding:0px;
+	padding-left:25px;
+	border-bottom:solid 1px #4D6FC0;
+	background-image:url(../images/tit.gif);
+	background-repeat: no-repeat;
+}
+
+h2 a {
+	  color: #4D6FC0;
+	  text-decoration:none;
+}
+
+h3 {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight:normal;
+	color:#B28;
+	margin-top: 12px;
+	margin-bottom: 7px;
+	padding:0px;
+}
+h4 {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-size: 11px;
+	line-height: 13px;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#4D6FC0;
+	margin-top: 12px;
+	margin-bottom: 7px;
+	padding:0px;
+	border-bottom:dotted 1px #4D6FC0;
+}
+
+p {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-size: 12px;
+	line-height:18px;
+	font-weight:normal;
+	margin-top:0px;
+	margin-bottom:5px;
+}
+p em {
+	font-style:italic;
+	color:#4D6FC0;
+}
+p strong {
+	font-weight:bold;
+	color:#4D6FC0;
+}
+p a {
+	color:#CC3300;
+	text-decoration:none;	
+}
+p a:hover {
+	text-decoration:underline;	
+}
+p.date {
+	padding:0px;
+	margin: 0px 0px 20px 25px;
+	letter-spacing:1px;
+	font-family:"Trebuchet MS",Helvetica,Arial,Geneva,sans-serif; font-weight:bold;
+}
+p acronym {
+	font-weight:bold;
+	color:#4D6FC0;
+	border-bottom:dotted 1px #4D6FC0;
+	cursor:help;
+}
+p.nota {
+	font-size:10px;
+	font-style:italic;
+}
+
+#mainContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	background-color:#EEF;
+}
+
+#contentContainer {
+	clear:left;
+	background-color: #F7F7FF;
+	padding: 35px 20px 20px 20px;
+	margin: 20px 5px 30px 5px;	
+}
+#contentContainer ol, #contentContainer ul {
+	margin-top:7px;
+	margin-bottom:7px;
+	margin-left: 0px;
+	padding-left:20px;
+	list-style-position: inside;
+}
+#contentContainer li {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+}
+#contentContainer li a{
+	color:#CC3300;
+	text-decoration:none;
+}
+#contentContainer li a:hover {
+	text-decoration:underline;
+}
+
+
+dl {
+	margin-top:7px;
+	margin-bottom:7px;
+}
+dt {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-weight:bold;
+	font-size: 12px;
+	color:#4D6FC0;
+}
+dd {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-weight:normal;	
+	font-size: 12px;
+	margin-left:10px;
+	
+}
+/* lista sumario */
+#contentContainer #sumario ol {
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left: 20px;
+	padding-left:10px;
+	list-style-position:outside;
+}
+#contentContainer #sumario li {
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+}
+#contentContainer #sumario li a{
+	color:#000;
+	text-decoration:none;
+}
+#contentContainer #sumario li a.todo{
+	color:#999999;
+	text-decoration:none;
+}
+#contentContainer #sumario li a.todo:hover{
+	color:#999999;
+	text-decoration:none;
+}
+#contentContainer #sumario li a:hover{
+	color:#4D6FC0;
+}
+pre {
+	border: solid 2px #EEF;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	line-height: 18px;
+	margin-left:10px;
+	margin-right:10px;
+	padding: 12px;
+	width:602px;
+	background-color:#FFFFFF;
+	overflow-x: auto;
+}
+pre.uniqueLine {
+	height:40px;
+}
+#menu {
+	margin-left:20px;
+	height:22px;
+}
+ul.postnav, ul.postnav li{margin:0;padding:0;list-style-type:none}
+ul.postnav li{
+	float:left;
+	width: 80px;
+	margin-right: 5px;
+}
+ul.postnav a{
+	font-family: "Century Gothic","Trebuchet MS",Helvetica,Arial,Geneva,sans-serif;
+	display:block;
+	width:80px;
+	padding:5px 0;	
+	background: #4D6FC0;
+	color:#FFF;
+	font-size: 12px;
+	line-height: 12px;
+    text-transform:uppercase;
+    text-decoration:none;
+	text-align:center;
+	text-decoration:none;
+}
+ul.postnav a:hover{
+	background: #B28;
+	color:#FFF;
+}
+.tabla-ejercicio {
+	border-collapse:collapse;
+	border:solid 1px #B28;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.tabla-ejercicio td {
+	border-collapse:collapse;
+	border:solid 1px #B28;
+	text-align:center;
+}
+code strong {
+	background-color:#FFCC00;
+}

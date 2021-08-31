@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+
+<body>
+
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="indexCSS.html">Anterior</a></li>
+  <li><a href="trasteando.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Introducci&oacute;n al CSS</h2>
+    <p><acronym title="Cascading Style Sheets">CSS</acronym> son las siglas de Cascading Style Sheets y son un regalo
+      del cielo. Si el documento XHTML est&aacute; bien estructurado, podemos 
+      cambiar totalmente su apariencia sin tocar una sola l&iacute;nea de c&oacute;digo 
+      en el archivo .html. Esto nos permite separar el contenido del 
+    aspecto, y es de gran importancia.</p>
+    <p>
+      Si quieres ver un ejemplo de c&oacute;mo con el mismo c&oacute;digo XHTML 
+      y distintos archivos CSS se pueden conseguir resultados totalmente 
+      diferentes, a la vez que espectaculares, &eacute;chale un vistazo al CSS <a href="http://www.csszengarden.com">Zen 
+    Garden</a> y al <a href="http://www.camaleoncss.com">Proyecto Camale&oacute;n</a>.</p>
+
+    <h3>&iquest;C&oacute;mo funciona?</h3>
+    
+      <p>En una hoja de estilos utilizamos <strong>REGLAS que consisten en elegir 
+      selectores a los que asignamos una serie de propiedades</strong>. Por ejemplo, si queremos que nuestra p&aacute;gina web tenga el fondo blanco, las letras grises, y una fuente Arial de 10 puntos de tama&ntilde;o, escribimos esta regla:</p>
+
+<pre><code class="css">body {
+  background-color: #fff;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+}</code></pre>
+      
+      <p>Como ves, las l&iacute;neas terminan en un punto y coma. Es muy importante que no se nos olvide. Ah, y si te lo est&aacute;s preguntando, 
+      #fff representa al color blanco, y #666 a un gris oscuro.<br />
+      <h3>&iquest;Selectores?</h3>
+      <p>Los selectores los utilizamos para elegir a qu&eacute; elementos se aplican las propiedades que escribimos. Hay diferentes tipos de selectores,
+    los m&aacute;s importantes son los que veremos ahora. Si queremos elegir una etiqueta, simplemente escribimos su
+      nombre. Por ejemplo, si queremos establecer las propiedades para<br />
+      los enlaces:</p>
+      
+<pre><code class="css">a {
+  ...
+}</code></pre>
+      
+      <p>Tambi&eacute;n podemos elegir un elemento &uacute;nico utilizando su atributo
+      id. Para ello, empleamos la almohadilla:</p>
+      
+<pre><code class="css"># menu {
+  ...
+}</code></pre>
+
+      <p>Luego podr&iacute;amos emplear este elemento de este modo:</p>
+      
+<pre><code class="html">&lt;p id =&quot;menu&quot;&gt;Bla bla bla &lt;/p&gt;
+</code></pre>
+      
+      <p>Otra cosa que podemos hacer es definir una clase y hacer que 
+      muchos elementos la utilicen, escribiendo un punto antes del nombre. 
+      Por ejemplo, si queremos destacar algo:</p>
+      
+<pre><code class="css">. importante {
+  ...
+}</code></pre>
+      
+      <p>Luego podr&iacute;amos emplear esa clase en los p&aacute;rrafos que queramos 
+      (o cualquier otro elemento), usando el atributo class de este 
+      modo:</p>
+      
+<pre><code class="html">&lt;p class =&quot;importante&quot;&gt;Bla bla bla &lt;/p&gt;
+</code></pre>
+      
+      <p>Tambi&eacute;n podemos seleccionar ciertos elementos, pero s&oacute;lo cuando 
+      est&eacute;n contenidos dentro de otros. Por ejemplo, si queremos seleccionar 
+      los &lt;li&gt;, pero s&oacute;lo de las listas sin ordenar:</p>
+      
+<pre><code class="css">ul li {
+  ...
+}</code></pre>
+      
+      <h3>&iquest;Qu&eacute; significa  &ldquo;cascading&rdquo;?</h3>
+      <p>Cascading significa cascada, y tiene que ver con la herencia. 
+      En CSS, los elementos hijos heredan todas las propiedades de sus 
+      padres. Por ejemplo, si establecemos una regla para el elemento 
+    table, sus hijos (td entre otros) tambi&eacute;n tendr&aacute;n esas mismas reglas. Es por esto que si, por ejemplo, queremos establecer un tipo de<br />
+      fuente para todo el documento, debemos indicarlo en el elemento 
+      body para que se propague por toda nuestra p&aacute;gina.<br />
+      <h3>&iquest;Puedo poner comentarios?</h3>
+      <p>Claro, pero son distintos a los de XHTML, que van entre &lt;!&ndash; 
+      y &ndash;&gt;.</p>
+      
+<pre><code class="css">/* Esto es un comentario */</code></pre>      
+      
+      <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

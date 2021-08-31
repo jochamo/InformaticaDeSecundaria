@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script></head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="truquitos.html">Anterior</a></li>
+  <li><a href="cabeceras.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Layout tableless a dos columnas</h2>
+    <p>En este cap&iacute;tulo veremos c&oacute;mo crear un layout sin tablas a dos columnas, muy t&iacute;pico en los blogs. Es bastante sencillo de seguir, y es un ejemplo de que dejar de usar tablas para maquetar no tiene por qu&eacute; ser un proceso doloroso.</p>
+    <h3>Caracter&iacute;sticas</h3>
+    <p>Esta maquetaci&oacute;n tiene las siguientes propiedades:</p>
+    <ul>
+      <li>Anchura fija</li>
+      <li>Centrado</li>
+      <li>2 columnas (una de ellas de barra lateral)</li>
+      <li>Cabecera (header)</li>
+      <li>Pie de p&aacute;gina (footer )</li>
+    </ul>
+    <p>Puedes echarle una ojeada en la figura.</p>
+    <p><img src="dosColumnas.jpg" alt="Layout dos Columnas" width="470" height="414" /></p>
+    <h3><br />
+      C&oacute;digo XHTML</h3>
+    <p>El esqueleto del c&oacute;digo XHTML de nuestra p&aacute;gina es el siguiente (ir&iacute;a dentro del &lt;body&gt;):</p>
+<pre><code class="html">&lt;div id=&quot;container&quot;&gt;
+
+  &lt;div id=&quot;header&quot;&gt;
+    &lt;h1&gt;T&iacute;tulo &lt;/h1&gt;
+    &lt;h2&gt;Subt&iacute;tulo &lt;/h2&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&quot;sidebar&quot;&gt;
+    &lt;h3&gt;Men&uacute;&lt;/h3&gt;
+    &lt;p&gt;Bla bla ... &lt;/p&gt;&lt;/div&gt;
+
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;h3&gt;Contenido principal&lt;/h3&gt;
+    &lt;p&gt;Bla bla ... &lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br />    &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br />    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id=&quot;footer&quot;&gt;
+    &lt;p&gt;Pie de p&aacute;gina&lt;/p&gt;
+  &lt;/div &gt;
+  
+&lt;/div &gt;</code></pre>  
+ 
+  <p>Como ves, tenemos cuatro capas. Ahora veremos el c&oacute;digo CSS de cada una de ellas.</p>
+    
+    <h3> #container</h3>
+    <p>Esta capa es un contenedor para el resto de la p&aacute;gina. Establece la anchura de todo y es la que centra el contenido. El truco est&aacute; en usar auto dentro de margin para lograr el centrado. Esto no funciona en el IE, as&iacute; que tendremos que echar mano de text-align: center en el body. El CSS completo es este:</p>
+<pre><code class="css">body {
+  text-align: center;
+  background: #999999;
+}
+#container {
+  width: 700px;
+  margin: 0px auto;
+  text-align: left;
+  background: #666666;
+}</code></pre>
+       
+    <h3>#sidebar</h3>
+    <p>Esta es la barra lateral tan famosa en los blogs. En otras p&aacute;ginas web, podemos poner ah&iacute; men&uacute;s, publi, o cualquier otra cosa. La clave en esta capa es usar float: left, que la sit&uacute;a a la izquierda y hace que todos los dem&aacute;s elementos la rodeen. Aqu&iacute; va el c&oacute;digo:</p>
+    
+<pre><code class="css">#sidebar {
+  width: 200px;
+  padding: 10px;
+  background: #CCCCCC;
+  float: left;
+}</code></pre>
+        
+    <p>El padding no es obligatorio, pero lo he puesto para despu&eacute;s poder explicar bien la siguiente capa. Tambi&eacute;n es necesario especificar el ancho en p&iacute;xeles. Ah, con este m&eacute;todo la barra no se extender&aacute; hasta abajo, sino que se corta en su final (esto se ve bien en la figura de arriba). Si pones la barra de otro color, y quieres que llegue hasta abajo, puedes usar la t&eacute;cnica de Faux Columns1.</p>
+    <h3>#main</h3>
+    <p>Esta es la capa donde ir&aacute; el contenido (en un blog, esto ser&iacute;an los posts). Lo importante en esta capa es indicar con margin-left la distancia desde el borde del #container hasta esta capa, pasando por encima de la barra lateral.<br />
+      Nuestra barra lateral tiene 200 p&iacute;xeles de ancho y 10 p&iacute;xeles de padding a la izquierda y a la derecha. Si hacemos memoria del modelo de caja, el margen izquierdo que tenemos que indicar ser&iacute;an 200 + 10 + 10 + X, donde X es la cantidad que nosotros queremos dejar de separaci&oacute;n entre la barra lateral y el contenido principal. Para el ejemplo, pondremos 5 p&iacute;xeles:</p>
+      
+<pre><code class="css">#main {
+  margin-left: 225px;
+  background: #FFFFFF;
+}</code></pre>
+  
+    <h3>#footer</h3>
+    <p>La capa del pie de p&aacute;gina viene bien para poner informaci&oacute;n de copyright/copyleft o cualquier otro tipo de datos miscel&aacute;neos.<br />
+      Aqu&iacute; &uacute;nicamente hemos de tener cuidado de &ldquo;anular&rdquo; el float que tiene la barra lateral mediante un clear:</p>
+      
+<pre><code class="css">#footer {
+  clear: both;
+  background:#000000;<br />  color: #FFFFFF;
+}</code></pre>
+
+   
+<p>&iexcl;Ya tenemos nuestro propio layout tablas que cumple los est&aacute;ndares del W3C!</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

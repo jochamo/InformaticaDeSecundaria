@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>XHTML &amp; CSS</title>
+
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+
+<script src="js/niftycube.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+window.onload=function(){
+
+	Nifty("div#mainContainer","big");
+
+	Nifty("div#contentContainer","big");
+
+	Nifty("ul.postnav a","small transparent");
+
+	CodeHighlighter.init()
+
+}
+
+</script>
+</head>
+
+<body>
+
+<div id="mainContainer">
+
+  <h1>XHTML</h1>
+
+  <p>&nbsp;</p>
+
+  <div id="menu">
+
+    <ul  class="postnav">
+
+      <li><a href="index.html">Sumario</a></li>
+
+      <li><a href="formateo.html">Anterior</a></li>
+
+      <li><a href="listas.html">siguiente</a></li>
+
+    </ul>
+
+  </div>
+
+  <div id="contentContainer">
+
+    <h2>Enlaces</h2>
+
+    <h3>Enlaces a una p&aacute;gina externa </h3>
+
+    <p>Para crear un enlace a una p&aacute;gina web que est&eacute; en otro servidor, utilzamos la etiqueta <strong>&lt;a&gt;</strong>.
+
+    </p>
+
+    <pre><code class="html">&lt;a href=&quot;http://www.loquesea.com&quot; title=&quot;Descripci&oacute;n&quot;&gt;Texto del enlace&lt;/a&gt;</code></pre>
+
+    <p>      El atributo <strong>href</strong> contiene la <acronym title="Uniform Resource Locator">URL</acronym> a donde queremos enlazar. Es muy importante 
+
+    que no se nos olvide el <strong>http://</strong> o no funcionar&aacute;.</p>
+
+    <p>      En <strong>title</strong> escribimos una descripci&oacute;n del sitio web al que enlazamos. Al
+
+      igual que con las etiquetas &lt;abbr&gt; y &lt;acronym&gt;, el texto aparecerer&aacute; al pasar el
+
+      rat&oacute;n por encima del enlace. No hay que confundir el t&iacute;tulo con el texto del enlace.
+
+    Son completamente independientes.</p>
+    
+    <p>El atributo <strong>target</strong> puede contener distintos valores pero la opci&oacute;n que m&aacute;s nos va a interesar es <strong>target=&quot;_blank&quot;</strong>: Con esta opci&oacute;n la p&aacute;gina enlazada se abrir&aacute; en una ventana nueva del navegador. Resulta &uacute;til cuando queremos abrir una p&aacute;gina externa, fuera de nuesta web. As&iacute; se mantendr&aacute; nuestra web abierta en otra ventana y no perdemos esa visita, pues tiene nuestra p&aacute;gina a mano. </p>
+    
+    <h3>Enlace a una p&aacute;gina local</h3>
+
+    <p>Para enlazar a una p&aacute;gina que est&eacute; en nuestro servidor, necesitamos saber 
+
+      <strong>la ruta</strong> (path) desde donde estamos hasta la ubicaci&oacute;n del archivo.
+
+      Si el origen (p&aacute;gina donde est&aacute; el enlace) est&aacute; en el mismo directorio que el 
+
+      destino (p&aacute;gina a la que apunta el enlace), entonces s&oacute;lo tenemos que escribir su<br />
+
+    nombre:</p>
+
+    <pre><code class="html">&lt;a href=&quot;profile.html&quot; title=&quot;Informaci&oacute;on sobre m&iacute;&quot;&gt;Ficha personal&lt;/a&gt;</code></pre>
+
+    <p>      Si el destino estuviera en un subdirectorio, utilizamos una barra <strong>/</strong> para 
+
+      indicar el camino:  </p>
+
+    <pre><code class="html">&lt;a href=&quot;galeria/color.html&quot; title=&quot;Galer&iacute;a color&quot;&gt;Ver dibujos a color&lt;/a&gt;</code></pre>
+
+    <p>      Si el destino estuviera un directorio padre, se usan dos puntos y una 
+
+      barra<strong> ../</strong> de esta manera:</p>
+
+    <pre><code class="html">&lt;a href=&quot;../index.html&quot; title=&quot;P&aacute;gina principal&quot;&gt;Volver&lt;/a&gt;</code></pre>
+
+    <h3>Enlace a una direcci&oacute;n de correo</h3>
+
+    <p>Podemos hacer un enlace que abra autom&aacute;ticamente el cliente de correo electr&oacute;nico que tenga instalado el usuario: Outlook, por ejemplo, o Thunderbird.</p>
+
+    <p>      S&oacute;lo tenemos que poner como valor del atributo href la palabra <strong>mailto:</strong> seguida de una direcc&oacute;n<br />
+
+    de correo electr&oacute;nico:</p>
+
+    <pre><code class="html">&lt;a href=&quot;mailto:lol@visualco.com&quot; title=&quot;E-mail de laurent Bi&eacute;&quot;&gt;Laurent Bi&eacute;&lt;/a&gt;</code></pre>
+
+    <h3>Anclas</h3>
+
+    <p>Las anclas permiten crear enlaces en un mismo documento, a una posici&oacute;n concreta de la p&aacute;gina. En el punto al que queremos saltar, insertamos un ancla y usamos el atributo <strong>id</strong> para identificar esta posci&oacute;n dentro del documento.  </p>
+
+    <pre><code class="html">&lt;a id=&quot;nuestra_ancla&quot; /&gt;</code></pre>
+
+    <p>      Si ahora vemos la p&aacute;gina en el navegador, no notaremos ninguna diferencia,
+
+      puesto que las anclas son invisibles. </p>
+
+    <p>Para crear un enlace que nos lleve a esta parte del documento basta con con indicar la id del ancla al que queremos llegar:</p>
+
+    <pre><code class="html">&lt;a href=&quot;#nuestra_ancla&quot; title=&quot;descripci&oacute;n&quot;&gt;Texto del enlace&lt;/a&gt;</code></pre>
+
+    <p>      Observa que en la ruta del enlace hay que poner una almohadilla (#) delante del nombre
+
+      del ancla. Tambi&eacute;n podemos enlazar a un ancla que est&eacute; en otra p&aacute;gina:</p>
+
+    <pre><code class="html">&lt;a href=&quot;otra_pagina.html#ancla&quot; title=&quot;descripci&oacute;n&quot;&gt;Texto del enlace&lt;/a&gt;</code></pre>
+
+    <h4>Ejercicio 1 </h4>
+
+    <p>Crea un documento XHTML con una lista de tu sitios web preferidos. </p>
+
+    <h4>Ejercicio 2 </h4>
+
+    <p>Crea 3 documentos XHTML en 3 carpetas distintas y crea los enlaces necesarios para navegar entre ellas. </p>
+
+    <h4>Ejercicio 3 </h4>
+
+    <p>Crea una documento XHTML con un 12 secciones de 2 p&aacute;rrafos cada una, y un sumario al principio del documento para enlazar con ellas. </p>
+
+    <h4>Ejercicio 4 </h4>
+
+    <p>Crea una documento XHTML con una lista de personas y los enlaces de correo electr&oacute;nico correspondientes. </p>
+
+    <p>&nbsp;</p>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
+

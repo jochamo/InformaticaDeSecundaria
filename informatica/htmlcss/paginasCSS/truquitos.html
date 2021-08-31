@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script></head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="modeloCaja.html">Anterior</a></li>
+  <li><a href="dosColumnas.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Algunos truquitos</h2>
+    <p>A partir de ahora, los cap&iacute;tulos de CSS ser&aacute;n totalmente pr&aacute;cticos. Este primero mostrar&aacute; diferentes &ldquo;trucos&rdquo; para conseguir ciertas cosas. Aseg&uacute;rate de probarlos y de comprender todos ellos antes de continuar.</p>
+      <h3>Links que cambian</h3>
+    <p>Los enlaces tienen tres estados: sin visitar (&ldquo;normales&rdquo;), hover (cuando pasamos el cursor del rat&oacute;n por encima), activos (cuando hacemos clic) y visitados (cuando ya hemos ido a esa direcci&oacute;n).<br />
+      Estos estados se corresponden a pseudoelementos, y podemos cambiar la apariencia de los enlaces con CSS. Sin embargo, algunos navegadores tienen un bug que, dependiendo del orden en el que escribamos las reglas, se mostrar&aacute; el resultado correctamente o no. &iquest;C&oacute;mo lo solucionamos? Pues LoVe/HAte. Es un mnemot&eacute;cnico que nos ayudar&aacute; a recordar el orden en el que estas reglas funcionan bien en cualquier navegador. Quedar&iacute;a as&iacute;:</p>
+<pre><code class="css">/* links normales */
+a: link {
+  text-decoration: none;
+  color: #00 a;
+}
+/* visitados */
+a: visited {
+  color: #a00;
+}
+/* hover */
+a: hover {
+  text-decoration: underline ;
+}
+/* activos */
+a: active {
+  font-weight: bold;
+}</code></pre>
+      
+      <p>Lo que hace el c&oacute;digo anterior es poner los enlaces de color azul marino y sin subrayado. Cuando pasamos el cursor por encima, aparece el subrayado. Al hacer clic, el texto del enlace se pone en negrita. Los enlaces que ya hemos visitado aparecen de color granate. F&aacute;cil, &iquest;no?</p>
+      <h3>Links con el subrayado de diferente color</h3>
+      <p>Al usar la propiedad text-decoration, el color de la l&iacute;nea de subrayado es el mismo que el del texto del enlace. Podemos hacer un peque&ntilde;o chanchullo para cambiar esto, y es quitar el subrayado y poner en su lugar un borde:</p>
+
+<pre><code class="css">a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #f0c;
+}
+a: hover {
+  border: none;
+}</code></pre>
+    
+    <p>Esto har&iacute;a que los enlaces fueran de color blanco, y que la l&iacute;nea de subrayado fuese fucsia. Al pasar el cursor por encima, se eliminar&iacute;a el subrayado. El pseudoelemento hover funciona para cualquier otro elemento de la web1. No dudes en usarlo en celdas de tablas o capas.</p>
+      <h3>Campos de formulario chulos</h3>
+      <p>Un efecto muy Web 2.0 es hacer los campos de formulario con fuente gigante y que el fondo del campo cambie cuando el usuario est&aacute; us&aacute;ndolo. Esto se consigue con el pseudoelemento focus:</p>
+      
+<pre><code class="css">input, textarea {
+  font-size: large;
+  border: 3px solid #70 C332;
+  color: #666;
+  background: #fff;
+}
+input: focus, text-area: focus {
+  background: #eee;
+}</code></pre>
+      
+     <p>Lo anterior pondr&iacute;a los campos de formulario input y textarea con una fuente grande y gris oscura, borde gordito de color verde y el fondo blanco. Al hacer foco (es decir, cuando el visitante est&aacute; situado en ese campo), el fondo cambia a un color gris clarito.</p>
+    <h3>Blockquotes 2.0</h3>
+      <p>Otro legado de la Web 2.0: blockquotes con texto gigante y unas comillas gigantes. Quiz&aacute;s es algo dif&iacute;cil de imaginar con esta descripci&oacute;n, pero si echas un vistazo a la figura, seguro que ya lo has visto en alg&uacute;n sitio antes.<br />
+      Un ejemplo de c&oacute;digo podr&iacute;a ser este:<br />
+    </p>
+      
+      <p><img src="blockquote.jpg" alt="Blockquote" width="238" height="126" /></p>
+    
+<pre><code class="css">blockquote {
+  background: url(comillas.gif) top left;
+  background-repeat : no-repeat ;
+  text-indent: 30px;
+  text-align: left;
+  font-size: x-large;
+  padding: 0px;
+}</code></pre>
+      
+    <p>Tendr&aacute;s que ajustar los valores seg&uacute;n la fuente y la imagen en s&iacute;. En muchos casos, es m&aacute;s conveniente utilizar padding y quitar el indentado.</p>
+      <h3>Cambiar texto por imagen</h3>
+      <p>Muchas veces, especialmente en headings, queremos cambiar el texto y en su lugar que aparezca una imagen bonita. Un ejemplo del c&oacute;digo ser&iacute;a este (suponiendo que nuestra imagen mide 300x100 p&iacute;xeles):</p>
+      
+<pre><code class="html">&lt;! -- XHTML --&gt;
+&lt;h3 id=&quot;enlaces&quot;&gt;&lt;span&gt;Enlaces&lt;/span&gt;&lt;/h3&gt;</code></pre>
+
+<pre><code class="css">/* CSS */
+h3# enlaces {
+  width: 300px;
+  height: 100px;
+  padding: 0px;
+  background: url(links.png) top left no-repeat;
+}
+h3 span {
+  visibility: hidden;
+}</code></pre>
+
+      <p>La etiqueta span es nueva, y no significa nada (literalmente). Es una etiqueta &ldquo;vac&iacute;a&rdquo;, y s&oacute;lo la usamos para conseguir ciertos efectos CSS. Como sem&aacute;nticamente no tiene ning&uacute;n valor, hemos de evitar su uso todo lo posible.<br />
+    Lo que hace el c&oacute;digo anterior es hacer coincidir las dimensiones de &lt;h1&gt; con las de la imagen. Despu&eacute;s, gracias al &lt;span&gt; nos encargamos de que el texto del heading sea invisible. No obstante, aunque el texto sea invisible, todav&iacute;a existe. Por eso, si el t&iacute;tulo es muy largo, es posible que sea m&aacute;s grande que la imagen que usamos de fondo, y es posible que nos descoloque el layout. En este caso, puedes cambiar la fuente de &lt;h1&gt; y hacerla enana.</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

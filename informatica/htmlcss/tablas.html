@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="index.html">Sumario</a></li>
+  <li><a href="imagenes.html">Anterior</a></li>
+  <li><a href="caracteres.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Tablas</h2>
+    <h3>Las etiquetas </h3>
+    <p>Disponemos de las siguientes etiquetas para crear una tabla:</p>
+    <ul>
+      <li>&lt;table&gt;: crea una tabla</li>
+      <li> &lt;caption&gt;: da un t&iacute;tulo</li>
+      <li> &lt;tr&gt;: Crea una fila</li>
+      <li> &lt;td&gt;: Crea una celda</li>
+      <li> &lt;th&gt;: Crea una celda de encabezamiento</li>
+    </ul>
+    <p>Un ejemplo: </p>
+    <pre><code class="html">&lt;table&gt;<br />  &lt;caption&gt;Torneo de Linares&lt;/caption&gt;<br />  &lt;tr&gt;<br />    &lt;th&gt;Jugadores&lt;/th&gt;<br />    &lt;th&gt;Clasifiaci&oacute;n&lt;/th&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Garry Kasparov&lt;/td&gt;<br />    &lt;td&gt;1&lt;/td&gt;<br />  &lt;/tr&gt;
+  &lt;tr&gt;<br />    &lt;td&gt;Anatoly Karpov&lt;/td&gt;<br />    &lt;td&gt;2&lt;/td&gt;<br />  &lt;/tr&gt;
+  &lt;tr&gt;<br />    &lt;td&gt;Vladimir Kraminik&lt;/td&gt;<br />    &lt;td&gt;2&lt;/td&gt;<br />  &lt;/tr&gt;<br />&lt;/table&gt;</code></pre>
+    <h3>Atributos de la etiqueta &lt;table&gt; </h3>
+    <p>La etiqueta &lt;table&gt; dispone de una serie de atributos que nos permiten
+      modificar su borde y los m&aacute;rgenes de las celdas. 
+      Para cambiar el tama&ntilde;o del borde de la tabla, usamos <strong>border</strong> con un valor
+      en p&iacute;xeles. Si no indicamos nada, los navegadores suelen tomar como valor por
+      defecto 1 o 0. Si no queremos ning&uacute;n borde, debemos utilizar border=&quot;0&quot;. 
+      Si lo que queremos es cambiar la distancia entre una celda y otra, empleamos<br />
+      el atributo <strong>cellspacing</strong> con un valor en p&iacute;xeles. Y para modificar la distancia
+    del contenido de la celda a los bordes de esta, usamos <strong>cellpadding</strong>. </p>
+    <pre><code class="html">&lt;table border=&quot;2&quot; cellpadding=&quot;10&quot; cellspacing=&quot;30&quot;&gt;<br />  &lt;caption&gt;Torneo de Linares&lt;/caption&gt;<br />  &lt;tr&gt;<br />    &lt;th&gt;Jugadores&lt;/th&gt;<br />    &lt;th&gt;Clasifiaci&oacute;n&lt;/th&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Garry Kasparov&lt;/td&gt;<br />    &lt;td&gt;1&lt;/td&gt;<br />  &lt;/tr&gt;
+  &lt;tr&gt;<br />    &lt;td&gt;Anatoly Karpov&lt;/td&gt;<br />    &lt;td&gt;2&lt;/td&gt;<br />  &lt;/tr&gt;
+  &lt;tr&gt;<br />    &lt;td&gt;Vladimir Kraminik&lt;/td&gt;<br />    &lt;td&gt;3&lt;/td&gt;<br />  &lt;/tr&gt;<br />&lt;/table&gt;</code></pre>
+    <h3>Expandir celdas</h3>
+    <p>El atributo <strong>colspan</strong> de la etiqueta <strong>&lt;td&gt;</strong> o <strong>&lt;th&gt;</strong> sirve para  expandir una celda horizontalmente.</p>
+    <p>Por ejemplo: </p>
+    <pre><code class="html">&lt;table border=&quot;2&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;<br />  &lt;caption&gt;Torneo de Linares&lt;/caption&gt;<br />  &lt;tr&gt;<br />    &lt;th colspan=&quot;2&quot;&gt;Jugadores&lt;/th&gt;<br />    &lt;th&gt;Clasifiaci&oacute;n&lt;/th&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Garry Kasparov&lt;/td&gt;
+    &lt;td&gt;Anatoly Karpov&lt;/td&gt;<br />    &lt;td&gt;1&lt;/td&gt;<br />  &lt;/tr&gt;
+  &lt;tr&gt;<br />    &lt;td colspan=&quot;2&quot;&gt;Vladimir Kraminik&lt;/td&gt;<br />    &lt;td&gt;2&lt;/td&gt;<br />  &lt;/tr&gt;<br />&lt;/table&gt;</code></pre>
+    <p>En la etiqueta de la primera celda de la primera fila  aparece el atributo<strong> colspan</strong> y su valor <strong>2</strong>. Este c&oacute;digo indica que  esta celda se extender&aacute; a la derecha hasta tener una longitud equivalente a 2  celdas.<br />
+      <br />
+    El atributo <strong>rowspan</strong> de la etiqueta <strong>&lt;td&gt;</strong> o <strong>&lt;th&gt;</strong> sirve para  expandir una celda verticalmente.</p>
+    <p>Por ejemplo: </p>
+    <pre><code class="html">&lt;table border=&quot;2&quot; cellpadding=&quot;10&quot; cellspacing=&quot;5&quot;&gt;<br />  &lt;caption&gt;Torneo de Linares&lt;/caption&gt;<br />  &lt;tr&gt;<br />    &lt;th&gt;Jugadores&lt;/th&gt;<br />    &lt;th&gt;Clasifiaci&oacute;n&lt;/th&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Garry Kasparov&lt;/td&gt;<br />    &lt;td rowspan=&quot;2&quot;&gt;1&lt;/td&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Anatoly Karpov&lt;/td&gt;<br />  &lt;/tr&gt;<br />  &lt;tr&gt;<br />    &lt;td&gt;Vladimir Kraminik&lt;/td&gt;<br />    &lt;td&gt;2&lt;/td&gt;<br />  &lt;/tr&gt;<br />&lt;/table&gt;</code></pre>
+    <p>En la etiqueta &lt;td&gt; de la segunda celda de  la segunda fila  aparece el atributo <strong>rowspan</strong> y su valor es <strong>2</strong>. Este c&oacute;digo indica que  esta celda se extender&aacute; abajo hasta tener una altura equivalente a 2  celdas.</p>
+    <h3>Ejercicios</h3>
+    <h4>Ejercicio 1 </h4>
+    <p>Crea un documento XHTML con una tabla de 3 filas, 5 columnas, un borde de 1 p&iacute;xel, un margen de relleno de celdas de 5 p&iacute;xeles y sin espacio entre las celdas. </p>
+    <h4>Ejercicio 2 </h4>
+    <p>Utiliza el atributo <strong>colspan</strong> para obtener  tablas con la siguiente estructura:</p>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <h4>Ejercicio 3 </h4>
+    <p>Utiliza el atributo <strong>rowspan</strong> para obtener  tablas con la siguiente estructura:</p>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td rowspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td rowspan="3">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td>&nbsp;</td>
+        <td rowspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td rowspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <h4>Ejercicio 4 </h4>
+    <p>Utiliza los atributos <strong>rowspan</strong> y <strong>colpsan</strong> para obtener  tablas con la siguiente estructura:</p>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="2" rowspan="3">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <table width="300" border="0" cellpadding="0" cellspacing="0" class="tabla-ejercicio">
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td rowspan="3">&nbsp;</td>
+        <td rowspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td rowspan="5">&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </div>
+</div>
+</body>
+</html>

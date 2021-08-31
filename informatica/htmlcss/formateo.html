@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu">
+    <ul  class="postnav">
+      <li><a href="index.html">Sumario</a></li>
+      <li><a href="reglasDeSintaxis.html">Anterior</a></li>
+      <li><a href="enlaces.html">siguiente</a></li>
+    </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Formateo sem&aacute;ntico b&aacute;sico</h2>
+    <h3>P&aacute;rrafos</h3>
+    <p>Los p&aacute;rrafos sirven para estructurar el contenido. En la web funcionan igual
+      que en la vida real: contienen una o m&aacute;s frases con relaci&oacute;n entre s&iacute;. Para crear 
+    un p&aacute;rrafo, metemos texto entre las etiquetas <strong>&lt;p&gt;</strong> y <strong>&lt;/p&gt;</strong>. Un ejemplo:</p>
+    <pre><code class="html">&lt;p&gt;
+Etiam et urna. Nulla dictum interdum risus. Cras facilisis euismod  justo. 
+Donec vitae velit. Pellentesque tempus. Integer et ante in pede  
+egestas porttitor. Suspendisse potenti. Pellentesque habitant morbi.
+&lt;/p&gt;</code></pre>
+    <h3>Saltos de l&iacute;nea</h3>
+    <p>A veces, dentro de un mismo p&aacute;rrafo necesitamos cambiar de l&iacute;nea. Esto lo 
+    conseguimos con la etiqueta </p>
+    <p><strong>&lt;br /&gt;</strong>, as&iacute;:    </p>
+    <pre><code class="html">&lt;p&gt;
+Dark Chest of Wonders&lt;br /&gt;
+Seen trought the eyes&lt;br /&gt;
+Of the one with pure heart&lt;br /&gt;
+Once, so long ago.
+&lt;/p&gt;</code></pre>
+    <h3>T&iacute;tulos (H1, H2, ... H6) </h3>
+    <p>Los t&iacute;tulos nos sirven para agrupar informaci&oacute;n. Imaginemos la secci&oacute;n de 
+      enlaces de nuestra p&aacute;gina. El t&iacute;tulo principal podr&iacute;a ser Mis Links Favoritos. 
+      Luego tendr&iacute;amos los enlaces clasificados en secciones (cada secci&oacute;n etiquetada
+      con un subt&iacute;tulo), como Blogs, Descargas y Videojuegos. Incluso en una de estas<br />
+      secciones podr&iacute;amos tener varias categor&iacute;as (marcadas con un sub-subt&iacute;tulo), 
+    como RPGs, Aventura, Acci&oacute;n y Lucha.</p>
+    <p> Para conseguir esto, tenemos las etiquetas <strong>&lt;hx&gt; </strong>y <strong>&lt;/hx&gt;</strong>, donde x es un 
+      n&uacute;mero del 1 al 6. <strong>&lt;h1&gt;</strong> corresponde al t&iacute;tulo m&aacute;s importante y deber&iacute;a haber
+      s&oacute;lo uno por p&aacute;gina. Veamos un ejemplo:</p>
+    <pre><code class="html">&lt;h1&gt;Mis aficiones&lt;/h1&gt;<br />&lt;h2&gt;Los videojuegos&lt;/h2&gt;<br />&lt;p&gt;<br />Mis videojuegos preferidos son los cl&aacute;sicos plataformas para la<br />Master System y la Megadrive, como el Sonic, Alex Kidd, Dinamite<br />Headdy, etc.<br />&lt;/p&gt;<br />&lt;p&gt;<br />Tambi&eacute;n me gustan las aventuras gr&aacute;ficas en 2D de toda la vida,<br />como Goblins 3, Monkey Island, Woodruf, Simon the Sorcerer...<br />&lt;/p&gt;<br />&lt;h2&gt;M&uacute;sica&lt;/h2&gt;<br />&lt;p&gt;<br />Me gusta escuchar rock en ingl&eacute;s. Mis grupos favoritos son<br />Dover, Nightwish, Sonata Arctica, HIM, etc. Tambi&eacute;n escucho<br />m&uacute;sica en castellano, como M&aacute;go de Oz y La Oreja de VanGogh
+&lt;/p&gt;</code>
+</pre>
+    <h3>Los Blockquotes</h3>
+    <p>      Los blockquotes sirven para se&ntilde;alar una cita. Los navegadores normalmente los muestran con un
+      indentado, aunque esto se puede cambiar con CSS. Nuestras canciones quedar&aacute;n
+      mejor as&iacute;:
+    </p>
+    <pre><code class="html">&lt;blockquote&gt;<br />  &lt;p&gt;<br />    You think you have it all know:&lt;br /&gt;<br />    The wisdom, power, know-how.&lt;br /&gt;<br />    Can't even think you're wrong.&lt;br /&gt;<br />    This is the way the brain of male is made.<br />  &lt;/p&gt;<br />&lt;/blockquote&gt;</code></pre>
+    <h3>Comentarios</h3>
+    <p>Los comentarios son notas que ponemos en el c&oacute;digo fuente de una p&aacute;gina, 
+      pero que no se muestran. Son utiles para
+    indicar qu&eacute; hacen ciertas partes del c&oacute;digo. </p>
+    <p>Para insertar un comentario, lo 
+      escribimos entre <strong>&lt;!--</strong> y <strong>--&gt;</strong> . Ten en cuenta que el comentario tiene que estar<br />
+      en una sola l&iacute;nea.</p>
+    <pre><code class="html">&lt;!-- Esto es un comentario --&gt;</code></pre>
+    <h3>Separadores horizontales</h3>
+    <p>      Los separadores horizontales (horizontal rules) han ca&iacute;do en desuso, ya
+      que podemos conseguir bordes delimitadores mediante CSS. Pero como el saber 
+    no ocupa lugar, nos quedaremos con la etiqueta <strong>&lt;hr /&gt;</strong>:</p>
+    <pre><code class="html">&lt;h2&gt;Los videojuegos&lt;/h2&gt;
+&lt;p&gt;Bla bla bla...&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;M&uacute;sica&lt;/h2&gt;
+&lt;p&gt;Bla bla bla&lt;/p&gt; </code></pre>
+    <h3>Texto preformateado</h3>
+    <p>Como ya os habr&eacute;is dado cuenta, al interpretarse el c&oacute;digo XHTML se ignoran 
+      espacios en blanco consecutivos, tabuladores, saltos de l&iacute;nea etc. Pero
+      muchas veces nos interesa que estas cosas se tengan en cuenta (imagina si quieres
+      insertar c&oacute;digo fuente, por ejemplo). Para esto tenemos la etiqueta <strong>&lt;pre&gt;</strong>:<br />
+    </p>
+    <pre><code class="html">&lt;pre&gt;<br />#include &lt;stdio.h&gt;<br />int main() {<br />printf(&quot;Hola mundo!\n&quot;);<br />return(0);<br />}
+&lt;/pre&gt;</code></pre>
+    <h3>C&oacute;digo inform&aacute;tico</h3>
+    <p>La etiqueta <strong>&lt;code&gt;</strong> sirve para se&ntilde;alar c&oacute;digo informatico. Por ejemplo: </p>
+    <pre><code class="html">&lt;code&gt;<br />#include &lt;stdio.h&gt;&lt;br /&gt;<br />int main() {&lt;br /&gt;<br />printf(&quot;Hola mundo!\n&quot;);&lt;br /&gt;<br />return(0);&lt;br /&gt;<br />}&lt;br /&gt;
+&lt;/code&gt;</code></pre>
+    <h3>&Eacute;nfasis</h3>
+    <p>Para dar &eacute;nfasis a un texto disponemos de la etiqueta <strong>&lt;em&gt;</strong> . Si queremos 
+      dar un &eacute;nfasis m&aacute;s fuerte, utilizaremos<strong> &lt;strong&gt;</strong>. Un ejemplo:    </p>
+    <pre><code class="html">&lt;p&gt;<br />&lt;em&gt;Far&lt;/em&gt; is not the word because I'm never<br />far &lt;strong&gt;enough&lt;/strong&gt;.<br />&lt;/p&gt;</code></pre>
+    <p>Los navegadores suelen representar &lt;em&gt; con cursiva y &lt;strong&gt; con negrita.</p>
+    <h3>Citas</h3>
+    <p>Si queremos marcar un texto como una cita, utilizaremos <strong>&lt;cite&gt;</strong> . La diferencia 
+      con <strong>&lt;blockquote&gt;</strong> es que &lt;cite&gt; no crea la cita en un bloque, sino que 
+      la integra en el mismo texto. Los navegadores normalmente muestran el texto
+    citado con cursivas.</p>
+    <pre><code class="html">&lt;p&gt;<br />Alguien escrib&iacute;o que 
+&lt;cite&gt;la vida es sue&ntilde;o, y los sue&ntilde;os,sue&ntilde;os son&lt;/cite&gt;.<br />&lt;/p&gt;</code></pre>
+    <h3>Acr&oacute;nimos y abreviaturas</h3>
+    <p>Para marcar los acr&oacute;nimos y abreviaturas usaremos      <strong>&lt;acronym&gt;</strong> y <strong>&lt;abbr&gt;</strong> , respectivamente. El efecto es el mismo: al pasar el rat&oacute;n
+      por encima de la palabra, nos aparece un rect&aacute;ngulo de ayuda con su significado.    </p>
+    <p>Estas etiquetas necesitan un atributo para funcionar, y es title . Como 
+      valor de ese atributo escribiremos el texto con el significado del acr&oacute;nimo o de la
+      abreviatura.</p>
+    <pre><code class="html">&lt;p&gt;<br />Mi ordenador tiene 512 &lt;abbr title=&quot;Megabytes&quot;&gt;Mb&lt;/abbr&gt; de<br />memoria &lt;acronym title=&quot;Random Access Memory&quot;&gt;RAM&lt;/acronym&gt;.<br />&lt;/p&gt; </code></pre>
+    <h3>Acerca de las etiquetas de formateo f&iacute;sico</h3>
+    <p>El XHTML ofrece una multidud de etiquetas de formato f&iacute;sico como <strong>&lt;b&gt;</strong>(negrita) o<strong> &lt;i&gt;</strong> (cursiva) Sin embargo, es conveniente <strong>no hacer uso de ellas</strong>. Recuerda que el XHTML sirve para marcar el contenido <strong>sem&aacute;nticamente</strong> y no f&iacute;sicamente.  CSS se encarga de esta parte. </p>
+    <h3>Ejercicios</h3>
+    <h4>Ejercicio 1 </h4>
+    <p> Utiliza las etiquetas  &lt;blockquote&gt; &lt;p&gt; y &lt;br /&gt; para crear un documento XHTML con el siguiente contenido: </p>
+    <p>El r&iacute;o Guadalquivir<br />
+      tiene las barbas granates.<br />
+      Los dos r&iacute;os de Granada<br />
+    uno llanto y otro sangre.<br />
+    <br />
+    &iexcl;Ay, amor,<br />
+    que se fue por el aire!<br />
+    </p>
+    <p>Para los barcos de vela,<br />
+      Sevilla tiene un camino;<br />
+      por el agua de Granada<br />
+      s&oacute;lo reman los suspiros. </p>
+    <h4>Ejercicio 2 </h4>
+    <p>En el c&oacute;digo XHTML los elementos en blanco (saltos de l&iacute;nea, espacios, tabuladores) se convierten en un &uacute;nico espacio en blanco. Utiliza el espacio insecable (&nbsp;&nbsp;) para crear un documento XHTML con el siguiente contenido:</p>
+    <p>El r&iacute;o Guadalquivir<br />
+      &nbsp;&nbsp;&nbsp;tiene las barbas granates.<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Los dos r&iacute;os de Granada<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uno llanto y otro sangre.</p>
+    <h4>Ejercicio 3 </h4>
+    <p>Crea un documento XHTML con un t&iacute;tulo principal y 2 secciones con un subt&iacute;tulo y  2 p&aacute;rrafos cada una.</p>
+    <h4>Ejercicio 4 </h4>
+    <p>Utiliza la etiqueta &lt;acronym&gt; para  crear un documento XHTML con el siguiente contenido:</p>
+    <p>ACNUR<br />
+      ADC<br />
+    AFDC 	MPFC</p>
+    <p class="nota">
+      ACNUR: Alto Comisionado de la Naciones Unidas para los Refugiados. <br />
+      ADC: Asistente de Desarrollo Comunitario. <br />
+    AFDC: MPFC. Autogesti&oacute;n, Fortalecimiento y Desarrollo de las Comunidades. Este sitio.</p>
+    <h4>Ejercicio 5 </h4>
+    <p>Crea un documento XHTML con un t&iacute;tulo y 2 p&aacute;rrafos, y resalta las palabras importantes con las etiquetas &lt;em&gt; y &lt;strong&gt; </p>
+    <h4>Ejercicio 6 </h4>
+    <p>Utiliza las etiquetas &lt;pre&gt; y &lt;code&gt; para crear un documento XHTML con el  siguiente c&oacute;digo CSS: </p>
+    <p>p {<br />
+font-family: Helvetica, Arial, Geneva, sans-serif;<br />
+font-size: 12px;<br />
+line-height: 18px;<br />
+font-weight: normal;<br />
+margin-top: 0px;<br />
+margin-bottom: 5px;<br />
+}<br />
+p em {<br />
+font-style: italic;<br />
+color: #4D6FC0;<br />
+}<br />
+p strong {<br />
+font-weight :bold;<br />
+color: #4D6FC0;<br />
+}</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

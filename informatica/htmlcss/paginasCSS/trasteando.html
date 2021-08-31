@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="introduccionCSS.html">Anterior</a></li>
+  <li><a href="modeloCaja.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Trasteando por primera vez</h2>
+    <p>Para empezar a meter mano al CSS, conviene conocer algunas propiedades sencillas.</p>
+    
+    <h3>&iquest;D&oacute;nde escribo la parte CSS?</h3>
+    
+    <p>Hay dos opciones para insertar estilos en un documento XHTML. Lo m&aacute;s
+      normal es hacerlo en un archivo externo (que se llama hoja de estilos) y
+      enlazarlo desde nuestro documento XHTML. Esto tiene una ventaja muy grande
+      y es que<strong> podemos tener muchas p&aacute;ginas enlazando a la misma hoja de estilos</strong>.
+      Si m&aacute;s adelante queremos cambiar algo, s&oacute;lo hemos de modicar un archivo (la
+    hoja de estilos) y afectar&aacute; a todas las p&aacute;ginas. Podemos enlazar una o m&aacute;s hojas poniendo esto dentro de la cabecera (head):</p>
+      
+<pre><code class="html">&lt;link href=&quot;nuestra_hoja.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+      
+      <p>La otra opci&oacute;n es escribir la informaci&oacute;n referente a los estilos en el mismo archivo XHTML. Lo podemos hacer escribiendo entre las etiquetas &lt;style&gt;
+      y &lt;/style&gt;, que tambi&eacute;n deben ir en la cabecera.
+      Estos estilos s&oacute;lo afectar&aacute;n al documento .html donde se a&ntilde;adan los estilos. Si hacemos las dos cosas a la vez, siempre tienen prioridad las reglas que
+    est&eacute;n dentro de &lt;style&gt;.</p>
+    
+    <pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
+&lt;!--
+
+/* aquí van todos los estilos css */
+
+--&gt;
+&lt;/style&gt;</code></pre>    
+    
+    <h3>El color de primer plano</h3>
+    <p>La propiedad color hace referencia al foreground color, es ecir, al color que est&aacute; por encima del fondo. Hablando en plata, viene a ser el color del texto. Si queremos que nuestra p&aacute;gina tenga las letras de gris oscuro, lo conseguimos con esto:</p>
+    
+      
+      <pre><code class="css">body { color: #666; }</code></pre>
+
+
+      <p>Muy f&aacute;cil, &iquest;no? Que pase el siguiente. . .</p>
+      <h3>El fondo</h3>
+      <p>Podemos moificar el fondo de un elemento con la propiedad background, que tiene la siguiente sintaxis:</p>
+      
+      <pre><code class="css">background: color | image | repeat | attachment | position;</code></pre>
+    
+    <p>El primer par&aacute;metro corresponde al color de fondo, los siguientes son relativos a la imagen de fondo:<br />
+      <strong>image:</strong> aqu&iacute; indicamos la ruta a la imagen que pondremos.<br />
+      Por ejemplo, url(fondo.gif).<br /> 
+      <strong>repeat:</strong> con esto establecemos si queremos que la imagen se repita o no, tanto horizontal como verticalmente. Con repeat se repite siempre en ambos sentidos (valor por defecto), mientras que con no-repeat no se repite nunca. Con repeat-x se repite s&oacute;lo en horizontal, y con repeat-y s&oacute;lo en vertical.<br />
+      <strong>attachment:</strong> sirve para indicar si el fondo se queda fijo en el sitio o se desplaza con scroll. Es un poco dif&iacute;cil de explicar, as&iacute; que lo mejor es que lo prob&eacute;is vosotros mismos: con scroll (valor por defecto) el fondo se desplaza, y con fixed se queda siempre en el mismo sitio.<br />
+      <strong>position:</strong> indica la posici&oacute;n del fondo. Indicamos tanto la posicion desde la izquierda como desde arriba (ya sea en p&iacute;xeles, porcentajes, o incluso palabras1). Los valores por defecto son 0 % 0 %, que sit&uacute;an al fondo en la esquina superior izquierda. Si lo quisi&eacute;ramos en las coordenadas 20,30 (tomando como el origen a la esquina superior izquierda), escribir&iacute;amos 20px 30px. Si queremos el fondo centrado, pues 50 % 50 %.<br />
+      Podemos omitir alguna propiedad si queremos. Adem&aacute;s, podemos establecer los valores de forma individual, usando las propiedades background-color, background-repeat, etc.<br />
+        Veamos algunos ejemplos para poner fondo a nuestra p&aacute;gina:</p>
+    <pre><code class="css">/* s&oacute;lo color de fondo */
+body { background : #fff; }
+/* color de fondo e imagen en mosaico */
+body { background : #fff url( fondo .gif ); }
+/* imagen fija , centrada y sin repetir */
+body {
+      background-color : #fff;
+      background-image : url( fondo .gif );
+      background-attachment : fixed;
+      background-repeat : no-repeat;
+      background-position : 50% 50%;
+}</code></pre>
+      <p>Hemos explicado de forma bastante detallada c&oacute;mo funciona la propiedad background, pero no te malacostumbres. Ahora iremos mucho m&aacute;s deprisa, y seguramente te toque buscar m&aacute;s informaci&oacute;n<br />
+      por tu cuenta.</p>
+      <h3>Fuente</h3>
+      <p>Hay varias propiedades que nos permiten jugar con el aspecto del texto. Podemos englobar todas bajo font, pero primero veremos algunas subpropiedades.<br />
+      Antes de nada, debemos considerar que no todos los ordenadores tienen las mismas fuentes instaladas. Es decir, que mi wonderfulosa fuente llamada chachi.ttf no tiene por qu&eacute; tenerla mi vecino. Es m&aacute;s, lo normal es que no la tenga. &iquest;Entonces qu&eacute; hacemos? Usar s&oacute;lo fuentes &ldquo;est&aacute;ndar&rdquo;, que tengan la mayor&iacute;a de ordenadores. Adem&aacute;s, podemos especificar varias, de forma que si no se tiene la primera, se muestre la segunda, si no se tiene la segunda, pues la tercera, etc.<br />
+      A lo que &iacute;bamos. La propiedad que sirve para cambiar la fuente es font-family. Como acabamos de ver, podemos indicar varias fuentes, por orden de preferencia. Si el nombre de una fuente tiene espacios en blanco, hay que ponerla entre comillas. Por ejemplo:</p>
+      
+      <pre><code class="css">font-family: &quot;Comic Sans MS&quot;, Arial, sans-serif;</code></pre>
+      
+      <p>El tama&ntilde;o de la fuente lo controlamos con font-size. Podemos indicar medidas en p&iacute;xeles (px) o en puntos (pt).</p>
+    <p>Para alinear el texto tenemos a text-align, que puede tomar los valores right (derecha), left (izquierda), center (centrado) o justify (justificado). Es muy normal tener una clase as&iacute;:</p>
+      
+      <pre><code class="css">.centrar { text-align: center; }</code></pre>
+      
+      <p>Si queremos indentar los p&aacute;rrafos, pues usamos text-indent:</p>
+      
+      <pre><code class="css">p { text-indent: 2em; }</code></pre>
+      
+      <p><strong>&iquest;Qu&eacute; significa em?</strong> Es una unidad relativa. Lo m&aacute;s f&aacute;cil es trabajar con p&iacute;xeles o porcentajes, pero en algunos casos conviene utilizar otras unidades. 1 em equivale al tama&ntilde;o de la fuente. As&iacute;, si por herencia o por cualquier otra cosa el texto se muestra en un tama&ntilde;o de fuente diferente, la proporci&oacute;n de indentado ser&iacute;a
+      siempre la misma. Si pusi&eacute;ramos 20px, siempre ser&iacute;a esa, aunque el tama&ntilde;o de la fuente fuera de 20 o de 32 p&iacute;xeles.<br />
+      Tambi&eacute;n podemos cambiar la decoraci&oacute;n del texto meidante text-decoration. Puede tomar diversos valores, como none (sin adornos), underline (subrayado), overline (subrayado superior) o line-through (tachado). Si queremos que nuestros links no tengan subrayado, pondremos:</p>
+      
+      
+      <pre><code class="css">a { text-decoration: none; }</code></pre>
+            
+      
+      <p>Podemos transformar las may&uacute;sculas y min&uacute;sculas con la propiedad text-transform. Si ponemos lowercase, todo se mostrar&aacute; en min&uacute;sculas; con uppercase, en may&uacute;sculas; y con capitalize pondremos una letra capital al principio de cada palabra.<br />
+      En cuanto al espaciado, para la distancia entre palabras usamos word-spacing; para el de las letras, letter-spacing; y para el interlineado, line-height.<br />
+      Un ejemplo con todo esto, para la etiqueta &lt;strong&gt;:</p>
+      
+<pre><code class="css">strong {
+  color: #000;
+  letter-spacing: 0.25 em;
+  text-trasform: uppercase;
+}</code></pre>
+    
+    
+  </div>
+</div>
+</body>
+</html>

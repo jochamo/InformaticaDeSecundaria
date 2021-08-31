@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu">
+    <ul  class="postnav">
+      <li><a href="index.html">Sumario</a></li>
+      <li><a href="formularios.html">Anterior</a></li>
+      <li><a href="index.html">siguiente</a></li>
+    </ul>
+  </div>
+  <div id="contentContainer">
+
+        <h2>Diferencias entre HTML y XHTML. Ventajas.</h2>
+
+       
+    <h3>Diferencias entre XHTML y HTML</h3>
+        <p>A consecuencia de la estandarizaci&oacute;n de la gram&aacute;tica de XHTML, &eacute;sta  es mucho m&aacute;s estricta que la de HTML. Las principales diferencias entre XHTML y HTML son:</p>
+        <p><strong>Todos los nombres de etiquetas y atributos van en min&uacute;sculas</strong><br />
+          Por ejemplo, en lugar de &lt;TITLE&gt; escribir &lt;title&gt;, o, &lt;img src=&quot;&quot; /&gt; en vez de  	&lt;IMG SRC=&quot;&quot; /&gt; ...</p>
+        <p><strong>Todos los valores de los atributos entre comillas</strong><br />
+          Correcto: &lt;img src=&quot;foto.png&quot; /&gt;<br />
+          Incorrecto: &lt;img src=foto.png /&gt; </p>
+        <p><strong>Todos los atributos deben tener un valor.</strong><br />
+          Incorrecto: &lt;input type=&quot;ckeckbox&quot; name=&quot;pais&quot; value=&quot;Espa&ntilde;a&quot; checked /&gt;<br />
+          Correcto: &lt;input type=&quot;ckeckbox&quot; name=&quot;pais&quot; value=&quot;Espa&ntilde;a&quot; checked=&quot;checked&quot; /&gt; </p>
+        <p><strong>Todas las etiquetas deben estar cerradas</strong><br />
+          En html abriamos etiquetas y no ten&iacute;amos la necesidad de cerrarlas, por ejemplo  	&lt;li&gt; , &lt;td&gt; , &lt;p&gt;. En XHTML deben cerrarse, as&iacute;  	&lt;li&gt; &lt;/li&gt;, &lt;td&gt; &lt;/td&gt; , &lt;p&gt; &lt;/p&gt;<br />
+          Las etiquetas anidadas deben cerrarse de dentro hacia fuera. Un  ejemplo de esto es un p&aacute;rrafo (&lt;p&gt;) dentro del cual se abre una  etiqueta de enlace (&lt;a&gt;). Habr&iacute;a que cerrarlos en el orden  inverso: &lt;/a&gt;&lt;/p&gt;</p>
+        <p><strong>Cerrar las etiquetas vacias</strong><br />
+          Por ejemplo &lt;br&gt; , &lt;img&gt; deben cerrarse con una / al final, dejando un espacio  	en blanco despues del &uacute;ltimo atributo, tal y como muestra el ejemplo,   	&lt;br /&gt; , &lt;img src=&quot;foto.png&quot; /&gt;<br />
+          Esto es para evitar confusiones con los navegadores desarrolados antes del est&aacute;ndar XHTML. </p>
+        <p><strong>En los comentarios, no incluir guiones dobles</strong><br />
+          Incorrecto: &lt;!-- no es -- valido --&gt;<br />
+          Incorrecto: &lt;!---------------------&gt;<br />
+          Correcto: &lt;! es valido --&gt; </p>
+
+        <p><strong>FONT y ciertos atributos desaparecen</strong></p>
+          <p>Hemos dicho que XHTML deja de lado la apariencia del documento, 
+          ya que eso es controlado por CSS. Entonces, las etiquetas          &lt;font&gt; y &lt;basefont&gt; carecen de sentido.<br />
+          Adem&aacute;s, esos atributos de algunas etiquetas que hacen referencia 
+          al color de las cosas, im&aacute;genes de fondo, etc. tambi&eacute;n desaparecen 
+          por este motivo: son sustituidos por reglas CSS. As&iacute; que 
+          say&ocirc;nara a bgcolor y compa&ntilde;&iacute;a. Lo mismo para el atributo align 
+          usado en p&aacute;rrafos e im&aacute;genes.</p>
+          <p><strong>B y amigos tambi&eacute;n se van</strong></p>
+          <p>Ciertas etiquetas de formato, como &lt;b&gt; (negrita), &lt;i&gt; (cursiva), 
+          etc. ya no se usan porque hacen referencia exclusivamente a la 
+          apariencia de las palabras. Si queremos dar &eacute;nfasis, utilizamos          &lt;em&gt;, y para dar &eacute;nfasis m&aacute;s fuerte &lt;strong&gt;. Los navegadores 
+          suelen mostrarlas como cursiva y negrita, respectivamente, aunque<br />
+        esto es lo de menos porque podemos cambiarlo con CSS.</p>
+                <p><strong>Codificar los caracteres &lt; y &amp;</strong></p>
+
+    <h3>Ventajas de XHTML sobre HTML</h3>
+        <p>En realidad las ventajas de XHTML son todav&iacute;a pocas sobre HTML, pues  todav&iacute;a es la primera versi&oacute;n de este lenguaje, y se podr&iacute;a considerar  como una versi&oacute;n de transici&oacute;n. Algunas de estas ventajas son:</p>
+        <ul>
+          <li>Estandarizaci&oacute;n de la gram&aacute;tica.</li>
+          <li>Los navegadores, buscadores, lectores de pantalla&hellip; no tienen que  &ldquo;deducir&rdquo; lo que el autor del documento ha querido decir, ya que el  mismo autor lo aclara mediante los datos adicionales a los que nos  hemos referido al definir XHTML.</li>
+          <li>Los programas que hemos nombrado que pod&iacute;an leer XML, tambi&eacute;n  pueden leer XHTML, pudiendo utilizar p&aacute;ginas webs como fuente de  informaci&oacute;n.</li>
+        </ul>
+        <p>Se prev&eacute; que en pr&oacute;ximas versiones de XHTML las ventajas sean muchas m&aacute;s, comenzando con una mayor independencia de HTML.</p>
+
+
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

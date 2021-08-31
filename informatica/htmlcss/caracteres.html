@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="index.html">Sumario</a></li>
+  <li><a href="tablas.html">Anterior</a></li>
+  <li><a href="formularios.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Charset / Codificaci&oacute;n  de caracteres </h2>
+    <p>Cualquier documento de texto utiliza un<strong> codificaci&oacute;n de caracteres</strong> para codificar el texto. En XHTML es importante indicar al navagador que codificaci&oacute;n de caracteres hemos utilizado. Esta operaci&oacute;n se hace de la siguiente manera </p>
+    <pre><code class="html">&lt;meta content=&quot;text/html; charset=<strong>iso-8859-1</strong>&quot; http-equiv=&quot;Content-Type&quot; /&gt;</code></pre>
+    <h2 id="entite">Referencias / Entidades</h2>
+    <p>&iquest;Qu&eacute; pasar&iacute;a si habiendo especificado una codificaci&oacute;n de caracteres  queremos utilizar puntualmente caracteres ajenos al juego de caracteres  especificado? Pues hay una soluc&oacute;n para ese problema: el empleo de referencias num&eacute;ricas de car&aacute;cter o entidades de car&aacute;cter.</p>
+    <h3>Referencias num&eacute;ricas de car&aacute;cter</h3>
+    <p>Las Referencias num&eacute;ricas de car&aacute;cter (NCR, Numeric Character  Reference, en ingl&eacute;s) es el c&oacute;digo que identifica el car&aacute;cter dentro  del conjunto de caracteres que incluye a todos los dem&aacute;s, el Unicode, no en la codificaci&oacute;n que tengamos definida en ese momento. La codificaci&oacute;n se puede hacer por su c&oacute;digo decimal o bien hexadecimal.</p>
+    <p>El escape de caracteres por referencias num&eacute;ricas de car&aacute;cter se  implementa escribiendo el c&oacute;digo entre un car&aacute;cter de ampersand y  almohadilla (&amp;#) y un punto y coma (;). Si el c&oacute;digo es en hexadecimal el c&oacute;digo empezar&aacute; por una equis min&uacute;scula (x). El valor en hexadecimal es insensible a may&uacute;sculas y min&uacute;sculas.</p>
+    <p>Por ejemplo:</p>
+    <pre><code>A = &amp;#65; = &amp;#x41;</code></pre>
+    <h3>Entidades de car&aacute;cter</h3>
+    <p>Son un alias de las referencias num&eacute;ricas de car&aacute;cter y est&aacute;n definidas en el propio  lenguaje de marcado (XHTML), por lo que su disponibilidad est&aacute; sujeta a  las diferentes versiones del lenguaje. Son c&oacute;digos mucho m&aacute;s f&aacute;ciles de  recordar que un simple c&oacute;digo num&eacute;rico.</p>
+    <p>El escape de caracteres por medio de entidades de car&aacute;cter se implementa poniendo el c&oacute;digo entre un car&aacute;cter de ampersand (&amp;) y un punto y coma (;). Y atenci&oacute;n porque es sensible a may&uacute;sculas y min&uacute;sculas.</p>
+    <p>Como ejemplo:</p>
+    <pre><code>&aacute; = &amp;aacute;  <br />&Aacute; = &amp;Aacute;</code></pre>
+    <h2>Caracteres XHTML </h2>
+    <p>XHTML utiliza algunos caracteres  como base del lenguage. Estos caracteres no se puden escribir sin utilizar las referencias o las entidades. </p>
+    <pre><code>&lt; =  &amp;lt;
+&gt; =  &amp;gt;
+&amp; =  &amp;amp;
+&quot; =  &amp;quot;</code></pre>
+    <h2>Enlaces</h2>
+    <p><a href="http://www.cookwood.com/html/extras/entities.html">http://www.cookwood.com/html/extras/entities.html</a></p>
+  </div>
+</div>
+</body>
+</html>

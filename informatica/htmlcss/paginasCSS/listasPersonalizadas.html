@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script></head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="cabeceras.html">Anterior</a></li>
+  <li><a href="menusVerticales.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Listas personalizadas</h2>
+    <p>Ahora vamos a aprender c&oacute;mo modificar las listas desordenadas para que tengan vi&ntilde;etas personalizadas. Para ello, necesitaremos una imagen peque&ntilde;ita que haga de vi&ntilde;eta. En Internet hay much&iacute;simas para descargar, aunque puedes dibujar las tuyas propias. Supondremos que la imagen se llama bullet.png.</p>
+    <h3>C&oacute;digo XHTML</h3>
+    <p>Extremadamente simple. Se trata de una lista sin ordenar, sin m&aacute;s misterio:</p>
+    
+<pre><code class="html">&lt;ul&gt;
+  &lt;li&gt;Sonata Arctica &lt;/li&gt;
+  &lt;li&gt;Nightwish &lt;/li&gt;
+  &lt;li&gt;HIM &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  
+    <h3>La lista</h3>
+    <p>Ahora la parte de CSS. Disponemos de una propiedad que se llama list-style-image, pero da problemas con ciertas medidas de vi&ntilde;etas. As&iacute; que tenemos que guarrear un poco el c&oacute;digo. Para el elemento ul ser&iacute;a:</p>
+<pre><code class="css">ul {
+  padding-left: 10px;
+  margin-left: 10px;
+  list-style-type: none;
+}</code></pre>
+    <p>Lo m&aacute;s importante es el list-style-type: none, que se encarga de quitar esas vi&ntilde;etas feas que pone el navegador por defecto. El padding y el margin es para sangrar la lista (puedes poner los valores que quieras, o incluso quitarlos).</p>
+    <h3>Los &iacute;tems</h3>
+    <p>&iexcl;Ya s&oacute;lo queda poner nuestra vi&ntilde;eta! Para ello, modificamos el estilo de los li que est&eacute;n en listas desordenad</p>
+<pre><code class="css">ul li {
+  padding-left: 12px;
+  background: url( bullet.png) 0em 0.5 em no-repeat;
+  margin-bottom: 1em;
+}</code></pre>
+    <p>Lo primero que vemos es el padding por la izquierda. Esto no es el sangrado, es una distancia de relleno que ponemos para que el texto del &iacute;tem no est&eacute; encima de la vi&ntilde;eta. Este valor lo tienes que modificar dependiendo de las dimensiones de la imagen de tu vi&ntilde;eta.<br />
+      Despu&eacute;s, nos encontramos con la propiedad background. Despu&eacute;s de establecer la imagen, debemos indicar en qu&eacute; posici&oacute;n (recuerda: primero horizontal, luego vertical) se encuentra la vi&ntilde;eta.</p>
+    <p>&iexcl;Aqu&iacute; hay truco! Como ves, trabajamos con em y no con medidas absolutas en p&iacute;xeles. &iquest;Por qu&eacute;? Porque as&iacute; nos vale para cualquier tama&ntilde;o del texto1. L&oacute;gicamente, es muy dif&iacute;cil dar con el valor correcto a la primera, as&iacute; que habr&aacute; que probar varias veces hasta topar con el que mejor quede. Ah, no se nos puede olvidar el no-repeat para evitar el mosaico.</p>
+    <p>Por &uacute;ltimo, margin-bottom se encarga de establecer la separaci&oacute;n entre un &iacute;tem y otro de la lista.</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

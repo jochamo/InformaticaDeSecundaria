@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="../styles/general.css" rel="stylesheet" type="text/css" />
+<link href="../styles/code.css" rel="stylesheet" type="text/css" />
+<link href="../styles/niftyCorners.css" rel="stylesheet" type="text/css" />
+<script src="../js/codehighlighter.js" type="text/javascript"></script>
+<script src="../js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script></head>
+<body>
+<div id="mainContainer">
+  <h1>CSS</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="indexCSS.html">Sumario</a></li>
+  <li><a href="listasPersonalizadas.html">Anterior</a></li>
+  <li><a href="indexCSS.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Men&uacute;s verticales</h2>
+    <p>&iquest;Sab&iacute;as que con listas se pueden hacer men&uacute;s verticales chulos?<br />
+      &iquest;Que por qu&eacute; listas? Porque un men&uacute; vertical es una serie de elementos relacionados, y lo m&aacute;s sem&aacute;ntico que podemos hacer es meterlo en una lista.<br />
+      El principal problema es que las listas son feas. En el cap&iacute;tulo anterior vimos c&oacute;mo hacerlas m&aacute;s bonitas, pero quiz&aacute;s queramos algo un poco m&aacute;s diferente para nuestro men&uacute;. CSS nos da la soluci&oacute;n, as&iacute; que ya no tendr&aacute;s excusa para hacer un men&uacute; en Flash.<br />
+      En el men&uacute; que haremos ahora, hacemos apa&ntilde;os con los colores de fondo y los bordes para conseguir efectos cuando el rat&oacute;n pase por encima. Puedes ver c&oacute;mo quedar&iacute;a en la figura 16.1. Como va con CSS, podr&iacute;amos f&aacute;cilmente incorporar im&aacute;genes, pero eso queda como ejercicio2.</p>
+    <p><img src="menuVertical.jpg" alt="Men&uacute; vertical" width="229" height="176" /></p>
+    <h3>C&oacute;digo XHTML</h3>
+    <p>Al grano, necesitamos una lista tal que as&iacute;:</p>
+    
+<pre><code class="html">&lt;div id=&quot;menu&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href =&quot;...&quot; title =&quot;...&quot;&gt;Home &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href =&quot;...&quot; title =&quot;...&quot;&gt;Archivos &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href =&quot;...&quot; title =&quot;...&quot;&gt;Enlaces &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href =&quot;...&quot; title =&quot;...&quot;&gt;Acerca de &lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+  
+    <h3>La lista</h3>
+    <p>&iexcl;A meterle mano al CSS! Empezaremos primero con darle la anchura que queramos a la lista (que ser&aacute; la anchura del men&uacute;), poner una fuente maja y quitar las vi&ntilde;etas y m&aacute;rgenes de la lista.</p>
+    
+<pre><code class="css">#menu ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+  font-family: Arial, sans-serif;
+  font-size: 11pt;
+}</code></pre>
+    
+    <p>Ponemos a continuaci&oacute;n un color de fondo para los &iacute;tems de la lista (&lt;li&gt;). Lo normal ser&iacute;a poner aqu&iacute; los efectos de hover, para que se activen cuando el rat&oacute;n pase por encima de todo el bloque, no s&oacute;lo del texto del enlace; pero Quien-T&uacute;-Sabes en sus versiones 6 e inferiores no soporta hovers en cosas que no sean un enlace, as&iacute; que vamos a tener que emplear una artima&ntilde;a m&aacute;s adelante. Por ahora, el CSS para el elemento li ser&iacute;a as&iacute; de sencillo:</p>
+<pre><code class="css">#menu ul li {
+  background-color: #666;
+}</code></pre>
+    <h3>Enlaces</h3>
+    <p>Y aqu&iacute; viene el chanchullo del que os hablaba antes para hacer el hover3: poner el enlace como si fuera un bloque, y as&iacute; ocupar&aacute; todo el li y podremos manipular sus dimensiones.</p>
+<pre><code class="css">#menu ul li a {
+  color: #ccc;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px 10px 10px 20px;
+}</code></pre>
+    <p>S&oacute;lo nos queda hacer los cambios para el hover:</p>
+<pre><code class="css">#menu ul li a: hover {
+  background: #000;
+  border-left: 10px solid #333;
+  color: #fff;
+}</code></pre>
+    <p>Si lo pruebas, ver&aacute;s que las letras se desplazan al hacer el hover, debido a que aparece el borde izquierdo. Si no os gusta este efecto, pod&eacute;is a&ntilde;adir la l&iacute;nea siguiente al link cuando est&aacute; normal. Lo que hace es poner un borde del mismo color que el fondo de los li, y as&iacute; parece que no existe:</p>
+<pre><code class="css">border-left: 10px solid #666;</code></pre>
+    <p>Merece la pena trastear con esta t&eacute;cnica, puede dar lugar a men&uacute;s muy logrados.</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

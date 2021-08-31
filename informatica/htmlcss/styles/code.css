@@ -1,0 +1,30 @@
+.css, .html { color:#000 }
+.css .ccomment { color:gray }
+.css .property { color:navy }
+.css .selector {
+	color:maroon;
+	font-weight:bold;
+}
+.css .unit { color:red }
+.css .url { color:green }
+.html .tag { color:purple }
+.html .ccomment {
+	color:gray;
+	font-style:italic;
+}
+.html .string { color:navy }
+.html .doctype { color:teal }
+.javascript  .comment { color:green }
+.javascript  .string { color:maroon }
+.javascript  .keywords { font-weight:bold }
+.javascript  .global {
+	color:blue;
+	font-weight:bolder;
+}
+.javascript .brackets { color:gray }
+
+
+
+
+
+

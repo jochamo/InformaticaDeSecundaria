@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="index.html">Sumario</a></li>
+  <li><a href="listas.html">Anterior</a></li>
+  <li><a href="tablas.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Im&aacute;genes</h2>
+    <h3>Formatos</h3>
+    <p> Se pueden utilizar 3 formatos de imagen: </p>
+    <ul>
+      <li>JPEG</li>
+      <li>GIF</li>
+      <li>PNG</li>
+    </ul>
+    <h4>GIF</h4>
+    <p>GIF es el acr&oacute;nimo de Graphic Image File Format. Fue desarrollado para el intercambio de im&aacute;genes en Compuserve y tiene como particularidad que el algoritmo de compresi&oacute;n es propietario, aunque se permite el uso a cualquier persona.</p>
+    <p>Las caracter&iacute;sticas de esto formato son:</p>
+    <p> * N&uacute;mero de colores: 2, 4 , 8, 16, 32, 128 &oacute; 256 de una paleta de 24 bits.<br />
+      * Compresi&oacute;n basada en el algoritmo de compresi&oacute;n LZW.<br />
+      * Formato de compresi&oacute;n sin p&eacute;rdida.</p>
+    <p>Caracter&iacute;sticas a&ntilde;adidas en la versi&oacute;n 89a:</p>
+    <p> * Carga progresiva.<br />
+      * M&aacute;scara de trasparencia de 1 bit.<br />
+      * Animaci&oacute;n simple.</p>
+    <h4>JPEG</h4>
+    <p>JPEG es el acr&oacute;nimo de Joint Photographic Experts Group. Fue dise&ntilde;ado para la compresi&oacute;n de im&aacute;genes fotogr&aacute;ficas, bas&aacute;ndose en el hecho de que el ojo humano no es perfecto y no es capaz de captar toda la informaci&oacute;n que se puede almacenar el una imagen de 24 bits. El formato JPEG intenta eliminar la informaci&oacute;n que el ojo humano no es capaz de distinguir, por eso se dice que posee un formato de compresi&oacute;n con p&eacute;rdida, porque elimina informaci&oacute;n.</p>
+    <p>Las caracter&iacute;sticas de este formato son:</p>
+    <p> * N&uacute;mero de colores: 24 bits color o 8 bits B/N<br />
+      * Muy alto grado de compresi&oacute;n.<br />
+      * Formato de compresi&oacute;n con p&eacute;rdida.<br />
+      * No permite trasparencia, ni canal alfa.<br />
+      * No permite animaci&oacute;n.
+    </p>
+    <h4>PNG</h4>
+    <p>PNG es el acr&oacute;nimo de Portable Network Graphics. Fue dise&ntilde;ado para reemplazar al formato GIF por ser este &uacute;ltimo m&aacute;s simple y menos completo. El objetivo de este formato es proporcionar un formato compresi&oacute;n de im&aacute;genes sin p&eacute;rdida para cualquier tipo de imagen.</p>
+    <p>Las caracter&iacute;sticas de este formato son:</p>
+    <p> * Color indexado hasta 256 colores y TrueColor hasta 48 bits por pixel.<br />
+      * Mayor compresi&oacute;n que el formato GIF (+10%)<br />
+      * Compresi&oacute;n sin p&eacute;rdida.<br />
+      * Visualizaci&oacute;n progresiva en dos dimensiones.<br />
+      * Canal alfa. (Transparencia variable)<br />
+      * Detecci&oacute;n de errores.<br />
+      * No permite animaci&oacute;n.
+    </p>
+    <h3>Insertar una imagen   </h3>
+    <p>Para insertar una imagen en un documento XHTML se utiliza la etiqueta <strong>&lt;img&gt;</strong>  con unos cuantos
+    atributos:</p>
+    <pre><code class="html">&lt;img src=&quot;ruta_hacia_la_imagen.jpg&quot; alt=&quot;descripci&oacute;n&quot; width=&quot;40&quot; heihgt=&quot;50&quot; /&gt;</code></pre>
+    <p>El atributo <strong>src</strong>  se utiliza para indicar la ruta hac&iacute;a la imagen. El atributo <strong>alt</strong> contiene una descripci&oacute;n de la imagen, que veremos cuando
+      pasemos el rat&oacute;n por encima y mientras se carga el archivo. Tambi&eacute;n se muestra
+      esta descripci&oacute;n cuando por alguina raz&oacute;n no se ha podido cargar la imagen. Es un atributo<br />
+    obligatorio por cuestiones de accesibilidad.. Los atributos <strong>width</strong> y <strong>height</strong> nos permiten establecer el ancho y el alto
+    de la imagen.</p>
+    <h3>imagen como v&iacute;nculo </h3>
+    <p>Para poner una imagen como v&iacute;nculo, basta con introducirla dentro de la etiqueta <strong>&lt;a&gt;</strong>:</p>
+    <pre><code class="html">&lt;a href=&quot;unapagina.html&quot; title=&quot;una p&aacute;gina muy interesante&quot;&gt;
+  &lt;img src=&quot;ruta_hacia_la_imagen.jpg&quot; alt=&quot;descripci&oacute;n&quot; width=&quot;40&quot; heihgt=&quot;50&quot; /&gt;
+&lt;/a&gt;</code></pre>
+    <h3>Ejercicios</h3>
+    <h4>Ejercicio 1 </h4>
+    <p>Crea un documento XHTML que contenga una imagen. ?Que occurre cuando el navagodor no encuentra la imagen en la ruta especificada? </p>
+    <h4>Ejercicio 2 </h4>
+    <p>Crea un documento XHTML que contenga varias veces la misma imagen y juega con los atributos width y height para cambiar sus tama&ntilde;o. &iquest;Que occure cuando se amplia mucho una imagen? </p>
+    <h4>Ejercicio 3 </h4>
+    <p>Crea un documento XHTML que contenga una im&aacute;gen de un logotipo de una marca comercial y crea un enlace a su p&aacute;gina web.</p>
+  </div>
+</div>
+</body>
+</html>

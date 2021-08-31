@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>XHTML &amp; CSS</title>
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/code.css" rel="stylesheet" type="text/css" />
+<link href="styles/roundedCorner.css" rel="stylesheet" type="text/css" />
+<script src="js/codehighlighter.js" type="text/javascript"></script>
+<script src="js/niftycube.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+	Nifty("div#mainContainer","big");
+	Nifty("div#contentContainer","big");
+	Nifty("ul.postnav a","small transparent");
+	CodeHighlighter.init()
+}
+</script>
+</head>
+<body>
+<div id="mainContainer">
+  <h1>XHTML</h1>
+  <p>&nbsp;</p>
+  <div id="menu"><ul  class="postnav"><li><a href="index.html">Sumario</a></li>
+  <li><a href="imagenes.html">Anterior</a></li>
+  <li><a href="diferencias.html">siguiente</a></li>
+  </ul>
+  </div>
+  <div id="contentContainer">
+    <h2>Formularios</h2>
+    <h3>La etiqueta FORM</h3>
+    <p>En XHTML, los formularios  se especifican con el elemento <strong>&lt;form&gt;</strong> . Un ejemplo: </p>
+    <pre><code class="html">&lt;form action=&quot;paginaQueTrataLosDatos.php&quot; method=&quot;post&quot; 
+enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
+   los controles del formulario 
+&lt;/form&gt;</code></pre>
+    <h4>El atributo action </h4>
+    <p>El atributo <strong>action</strong> es requerido para que el formulario env&iacute;e los datos  a la direcci&oacute;n web de la aplicaci&oacute;n web que procese el set de datos del  formulario.</p>
+    <h4>El methodo de env&iacute;o </h4>
+    <p>El atributo meted determina que m&eacute;todo http ser&aacute; utilizado para enviar  los hacia la aplicaci&oacute;n de servidor que procesar&aacute; el set de datos. Hay  dos posibles valores para usar:
+    </p>
+    <ul><li>&ldquo;get&rdquo; por defecto</li>
+      <li>&ldquo;post&rdquo;</li>
+    </ul>
+    <h4>El atributo enctype </h4>
+    <p>El atributo enctype especifica como el set de datos ser&aacute; re-codificado para el env&iacute;o. Se suelen utilizar las siguientes  codificacinnes:</p>
+    <dl><dt>application/x-www-form-urlencoded</dt>
+      <dd>La codificaci&oacute;n por defecto </dd>
+      <dt>multipart/form-data</dt>
+      <dd>Cuando el formumario tiene un control para seleccionar un archivo. </dd>
+      <dt>text/plain</dt>
+      <dd>Cuando enviamos el correo al cliente de correo electr&oacute;nico . </dd>
+    </dl>
+    <h3>Controles b&aacute;sicos</h3>
+    <p>La mayoria de los controles de un formulario se definen mediante la etiqueta <strong>&lt;input&gt;</strong>. El atributo <strong>type</strong> permite elegir el tipo de control deseado. Para un campo de texto simple utilizaremos el valor type=&quot;<strong>text</strong>&quot;:</p>
+    <pre><code class="html">&lt;input type=&quot;text&quot; id=&quot;unIdentificador&quot; name=&quot;edad&quot; /&gt;</code></pre>
+    <h4>El atributo Type </h4>
+    <p>El atributo <strong>type</strong> permite elegir el tipo de control deseado</p>
+    <dl>
+	
+	<dt>text</dt>
+	<dd>Campo de texto</dd>
+	<dt>hidden</dt>
+	<dd>Campo oculto</dd>
+	<dt>password</dt>
+	<dd>Campo de contrase&ntilde;a</dd>
+	<dt>button</dt>
+	<dd>Un bot&oacute;n</dd>
+	<dt>submit</dt>
+	<dd>Bot&oacute;n para enviar el formulario</dd>
+	<dt>reset</dt>
+	<dd>Bot&oacute;n para resetear el formulario</dd>
+	<dt>checkbox</dt>
+	<dd>Casilla de verificaci&oacute;n</dd>
+	<dt>radio</dt>
+	<dd>Bot&oacute;n de opci&oacute;n</dd>
+	<dt>file </dt>
+	<dd>Selector de archivo</dd>
+	<dt>image</dt>
+	<dd>Detector de posici&oacute;n en una imagen </dd>
+    </dl>
+    <h4>El atributo name </h4>
+    <p>El valor introducido por el usuario en un control es una variable. Para tratar correctament una variable es necesario nombrarla  con el atributo <strong>name.</strong></p>
+    <h4>El atributo id </h4>
+    <p>El atributo <strong>id</strong> permite especificar un <strong>identificador</strong> para el elemento. En XHTML todas las etiquetas pueden tener un identificador y es menester que todos los identificadores de una misma p&aacute;gina sean distintos. </p>
+    <h3>      Etiquetar campos</h3>
+    <p>La etiqueta <strong>&lt;label&gt; </strong>se usa para especificar los  t&iacute;tulos (etiquetas) de los controles. El atributo <strong>for  </strong>permite relacionar un t&iacute;tulo(etiqueta) con un control. Basta con indicar como valor del atributo for es la <strong>id</strong> del control <br />
+    al que queremos hacer referencia.</p>
+    <pre><code class="html">&lt;label for=&quot;<strong>unIdentificador</strong>&quot;&gt;Edad&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;<strong>unIdentificador</strong>&quot; name=&quot;edad&quot;&gt;</code></pre>
+    <h3>La etiqueta FIELDSET </h3>
+    <p>Elemento <strong>&lt;fieldset&gt;</strong> es un elemento de bloque, que sirve para agrupar controles de un formulario, la etiqueta &lt;fieldset&gt; requiere de otra etiqueta necesaria para su correcto funcionamiento y es la etiqueta &lt;legend&gt;. Un ejemplo:</p>
+    <pre><code class="html">&lt;fieldset&gt;
+  &lt;legend&gt;Datos personales&lt;/legend&gt;<br />  &lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; /&gt;<br />  &lt;input type=&quot;text&quot; id=&quot;apellidos&quot; name=&quot;apellidos&quot; /&gt;<br />&lt;/fieldset&gt;</code></pre>
+    <h3>Areas de texto</h3>
+    <p>Para a&ntilde;adir una area de texto multil&iacute;nea:</p>
+    <pre><code class="html">&lt;textarea name=&quot;observaciones&quot;&gt;&lt;/textarea&gt;</code></pre>
+    <h3>      Listas desplegable </h3>
+    <p>Para a&ntilde;adir un lista desplegable se utilizan dos etiquetas <strong>&lt;select&gt;</strong> y <strong>&lt;option&gt;</strong>. La etiqueta </p>
+    <pre><code class="html">&lt;select&gt;
+&lt;option value=&quot;1&quot;&gt;Ingl&eacute;s&lt;/option&gt;<br />&lt;option value=&quot;2&quot; selected=&quot;selected&quot;&gt;Castellano&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    <p>Para agrupar las opciones se utiliza la etiqueta <strong>&lt;optgroup&gt;</strong></p>
+    <pre><code class="html">&lt;select&gt;
+  &lt;optgroup label=&quot;Europa&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Franc&iacute;a&lt;/option&gt;<br />    &lt;option value=&quot;2&quot; selected=&quot;selected&quot;&gt;Espa&ntilde;a&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;As&iacute;a&quot;&gt;
+    &lt;option value=&quot;3&quot;&gt;Jap&oacute;n&lt;/option&gt;<br />    &lt;option value=&quot;4&quot;&gt;Ind&iacute;a&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>
